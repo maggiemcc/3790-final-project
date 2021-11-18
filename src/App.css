@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+}
+.App {
+  text-align: center;
+  background-color: black;
+  padding:2%;
+}
+
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 5px;
+}
