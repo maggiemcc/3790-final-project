@@ -27,6 +27,7 @@ const characterInfoStyle = {
   paddingRight: "0",
   width: "100%",
   fontSize: "14px",
+  lineheight: "normal"
 };
 
 const bull = (
@@ -79,7 +80,7 @@ const CharacterDetail = () => {
             </Box>
 
             <Box style={{ margin: "20px auto" }}>
-              <Typography variant="h6" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information: {character.name}</Typography>
+              <Typography variant="h6" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information:</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Born:</b> {character.birthday}</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Nickname:</b> {character.nickname}</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Portrayed By:</b> {character.portrayed}</Typography>

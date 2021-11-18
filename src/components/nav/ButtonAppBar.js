@@ -52,9 +52,6 @@ const ButtonAppBar = () => {
           </ListItemIcon>
           <ListItemText primary="Welcome" />
         </ListItem>
-
-        {/* {identity.user && ( */}
-        <List>
           <ListItem button onClick={() => handleNavChoice('episodes', true)}>
             <ListItemIcon>
               <LocalMoviesIcon sx={{ color: "white" }} />
@@ -83,8 +80,6 @@ const ButtonAppBar = () => {
             <ListItemText primary="Character Deaths" />
           </ListItem>
         </List>
-        {/* )} */}
-      </List>
     </Box>
   );
 
@@ -124,7 +119,7 @@ const ButtonAppBar = () => {
 
 
             {!identity.user && !identity.provisionalUser && (
-              <div>
+              <Box>
                 <Button color="inherit">
                   <NavLink
                     to="/signup"
@@ -141,7 +136,7 @@ const ButtonAppBar = () => {
                     Login
                   </NavLink>
                 </Button>
-              </div>
+              </Box>
             )}
 
             {identity.provisionalUser && (

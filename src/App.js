@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { BreakingBadContextProvider } from "./contexts/BreakingBadContext";
 import ButtonAppBar from "./components/nav/ButtonAppBar";
 import { Route, Switch } from "react-router-dom";
@@ -37,11 +37,11 @@ const App = () => {
   );
 
   return (
-    <div className="App">
+    <Box className="App">
       <NetlifyIdentityContext url="https://react-app-four.netlify.app">
-        <div style={{ maxWidth: 1200, margin: "auto" }}>
-          <div
-            style={{
+        <Box sx={{ maxWidth: 1200, margin: "auto" }}>
+          <Box
+            sx={{
               border: "2px solid white",
               padding: "0 0 2% 0",
               background: "black",
@@ -100,16 +100,14 @@ const App = () => {
               </ScrollToTop>
 
             </BreakingBadContextProvider>
-          </div>
+          </Box>
 
-          <div>
-            <h5 style={{ color: "white", margin: 0, padding: "4%" }}>
-              DGM3790 {bull} © Maggie McCausland {bull} 2021
-            </h5>
-          </div>
-        </div>
+          <Box>
+            <Typography variant="body1" sx={{ color: "white", margin: 0, padding: "4%" }}>DGM3790 {bull} © Maggie McCausland {bull} 2021</Typography>
+          </Box>
+        </Box>
       </NetlifyIdentityContext>
-    </div>
+    </Box>
   );
 };
 
