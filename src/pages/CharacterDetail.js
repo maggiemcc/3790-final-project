@@ -62,7 +62,7 @@ const CharacterDetail = () => {
 
       {identity.user && (
         <Box sx={{ color: "white", padding: "3%", margin: "auto" }}>
-          <Typography variant="h3">Character: {character.name}</Typography>
+          <Typography variant="h3" fontWeight="bold">Character: {character.name}</Typography>
 
           <Box
             sx={{
@@ -79,7 +79,7 @@ const CharacterDetail = () => {
             </Box>
 
             <Box style={{ margin: "20px auto" }}>
-              <Typography variant="body1" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information: {character.name}</Typography>
+              <Typography variant="h6" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information: {character.name}</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Born:</b> {character.birthday}</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Nickname:</b> {character.nickname}</Typography>
               <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Portrayed By:</b> {character.portrayed}</Typography>
