@@ -19,7 +19,7 @@ const EpisodesContainer = () => {
 
       )}
 
-      {/* {identity.user && ( */}
+      {identity.user && (
         <Box sx={{
           justifyContent: "center",
           display: "block",
@@ -37,7 +37,7 @@ const EpisodesContainer = () => {
             );
           })}
         </Box>
-      {/* )} */}
+      )}
     </Box>
   );
 };

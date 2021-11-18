@@ -1,8 +1,5 @@
 import * as React from "react";
-// import Card from "@mui/material/Card";
-import Box from "@mui/material/Box";
-// import CardContent from "@mui/material/CardContent";
-// import "../components/EpisodesCard.css";
+import { Box, Typography } from "@mui/material";
 
 const style = {
   fontWeight: "300",
@@ -36,9 +33,9 @@ const DeathsCard = (props) => {
     >
       <Box
         sx={{
-        justifyContent: "center",
-        height: "100%",
- 
+          justifyContent: "center",
+          height: "100%",
+
         }}
       >
         <Box
@@ -50,42 +47,46 @@ const DeathsCard = (props) => {
             height: "100%",
           }}
         >
-        <div style={{display: "block", marginBottom: "8px", paddingBottom: "1%",}}>
-        <div style={{display: "flex", flexWrap: "wrap", marginBottom: "8px", paddingBottom: "1%", justifyContent: "left"}}>
-          <div style={{ margin: "auto 2%"}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Season:{" "}</h6>
-            <h6 style={style}>{death.season}</h6>
-          </div>
-        <div style={{ margin: "auto 2%"}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0", }}>Episode:{" "}</h6>
-            <h6 style={style}>{death.episode}</h6>
-          </div>
-          <div style={{ margin: "auto 2%",}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Death:{" "}</h6>
-            <h6 style={style}>{death.death}</h6>
-          </div>
-          </div>
+          <Box sx={{ display: "block", marginBottom: "8px", paddingBottom: "1%", }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", marginBottom: "8px", paddingBottom: "1%", justifyContent: "left" }}>
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Season:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.season}</Typography>
+              </Box>
 
-          <div style={{display: "block", marginBottom: "8px", paddingBottom: "1%",}}>
-          <div style={{ margin: "auto 2%"}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Number of Deaths:{" "}</h6>
-            <h6 style={style}>{death.number_of_deaths}</h6>
-          </div>
-          <div style={{ margin: "auto 2%"}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Cause:{" "}</h6>
-            <h6 style={style}>{death.cause}</h6>
-          </div>
-          <div style={{ margin: "auto 2%" }}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Responsible:{" "}</h6>
-            <h6 style={style}>{death.responsible}</h6>
-          </div>
-          </div>
-          </div>
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Episode:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.episode}</Typography>
+              </Box>
 
-          <div style={{ margin: "auto 2%",}}>
-            <h6 style={{ fontWeight: "bold", display: "inline", margin: "0" }}>Their Last Words:{" "}</h6>
-            <h6 style={style}>{death.last_words}</h6>
-          </div>
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Death:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.death}</Typography>
+              </Box>
+            </Box>
+
+            <Box sx={{ display: "block", marginBottom: "8px", paddingBottom: "1%", }}>
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Number of Deaths:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.number_of_deaths}</Typography>
+              </Box>
+
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Cause:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.cause}</Typography>
+              </Box>
+
+              <Box sx={{ margin: "auto 2%" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Responsible:{" "}</Typography>
+                <Typography variant="body1" sx={style}>{death.responsible}</Typography>
+              </Box>
+            </Box>
+          </Box>
+
+          <Box sx={{ margin: "auto 2%" }}>
+            <Typography variant="body1" sx={{ fontWeight: "bold", display: "inline", margin: "0" }}>Their Last Words:{" "}</Typography>
+            <Typography variant="body1" sx={style}>{death.last_words}</Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
