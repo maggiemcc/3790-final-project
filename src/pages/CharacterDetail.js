@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import {
   Box,
+  Typography
 } from "@mui/material";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 
@@ -31,7 +32,7 @@ const characterInfoStyle = {
 const bull = (
   <Box
     component="span"
-    style={{
+    sx={{
       display: "inline-block",
       mx: "2px",
       transform: "scale(0.8)",
@@ -54,16 +55,17 @@ const CharacterDetail = () => {
 
   return (
 
-    <div style={{ padding: "2%" }}>
+    <Box sx={{ padding: "2%", color: "white" }}>
       {!identity.provisionalUser && !identity.user && (
-        <h3 style={{ color: "white" }}>Please signup or login first.</h3>
-      )};
+        <Typography variant="h5">Please signup or login first.</Typography>
+      )}
 
       {identity.user && (
-        <div style={{ color: "white", padding: "3%", margin: "auto" }}>
-          <h1>Character: {character.name}</h1>
-          <div
-            style={{
+        <Box sx={{ color: "white", padding: "3%", margin: "auto" }}>
+          <Typography variant="h3">Character: {character.name}</Typography>
+
+          <Box
+            sx={{
               width: "100%",
               textAlign: "left",
               display: "flex",
@@ -72,57 +74,44 @@ const CharacterDetail = () => {
               margin: "2% auto",
             }}
           >
-            <div style={{ textAlign: "left", margin: "auto", }}>
+            <Box sx={{ textAlign: "left", margin: "auto", }}>
               <img style={imageStyle} src={character.img} alt="characterpicture" />
-            </div>
+            </Box>
 
-            <div style={{ margin: "20px auto" }}>
-              <h3 style={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information:</h3>
-              <h4 style={characterInfoStyle}>
-                {bull} <b>Born:</b> {character.birthday}
-              </h4>
-              <h4 style={characterInfoStyle}>
-                {bull} <b>Nickname:</b> {character.nickname}
-              </h4>
-              <h4 style={characterInfoStyle}>
-                {bull} <b>Portrayed By:</b> {character.portrayed}
-              </h4>
-              <h4 style={characterInfoStyle}>
-                {bull} <b>Status:</b> {character.status}
-              </h4>
-              <div style={{ margin: 0, display: "inline" }}>
+            <Box style={{ margin: "20px auto" }}>
+              <Typography variant="body1" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information: {character.name}</Typography>
+              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Born:</b> {character.birthday}</Typography>
+              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Nickname:</b> {character.nickname}</Typography>
+              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Portrayed By:</b> {character.portrayed}</Typography>
+              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Status:</b> {character.status}</Typography>
 
-                <h4 style={characterInfoStyle}>
-                  {bull} <b>Occupation(s):</b>
-                </h4>
-                <div
-                  style={{
-                    paddingLeft: "15px",
-                  }}
-                >
+              <Box sx={{ margin: 0, display: "inline" }}>
+                <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Occupation(s):</b></Typography>
+                <Box sx={{ paddingLeft: "15px" }}>
                   {character.occupation.map((occupation, index) => {
                     return (
-                      <h4
+                      <Typography variant="body1"
                         key={occupation}
-                        style={{
+                        sx={{
                           lineHeight: "24px",
                           display: "block",
                           fontSize: 14,
                           margin: 0,
                         }}
-                      >- {(index ? " " : " ") + occupation}
-                      </h4>
+                      >
+                        - {(index ? " " : " ") + occupation}
+                      </Typography>
                     );
                   })}
-                </div>
-              </div>
-            </div>
+                </Box>
+              </Box>
+            </Box>
 
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
 
-    </div>
+    </Box>
   );
 };
 export default CharacterDetail;
