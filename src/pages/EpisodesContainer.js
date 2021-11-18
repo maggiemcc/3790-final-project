@@ -2,6 +2,8 @@ import * as React from "react";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import EpisodesCard from "../components/EpisodesCard";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
+import { Box, Typography } from "@mui/material";
+
 
 
 const EpisodesContainer = () => {
@@ -9,15 +11,16 @@ const EpisodesContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <div style={{ padding: "2%" }}>
-      <h1>Episodes</h1>
+    <Box sx={{padding: "2%", color: "white"}}>
+      <Typography variant="h3" fontWeight="bold">Episodes</Typography>
 
       {!identity.provisionalUser && !identity.user && (
-        <h3 style={{ color: "white" }}>Please signup or login first.</h3>
-      )};
+      <Typography variant="h5">Please signup or login first.</Typography>
 
-      {identity.user && (
-        <div style={{
+      )}
+
+      {/* {identity.user && ( */}
+        <Box sx={{
           justifyContent: "center",
           display: "block",
           width: "100%",
@@ -33,9 +36,9 @@ const EpisodesContainer = () => {
               />
             );
           })}
-        </div>
-      )}
-    </div>
+        </Box>
+      {/* )} */}
+    </Box>
   );
 };
 

@@ -19,7 +19,7 @@ const QuotesContainer = () => {
 
         )}
 
-        {/* {identity.user && ( */}
+        {identity.user && (
           <Box
           sx={{
             display: "flex",
@@ -38,7 +38,7 @@ const QuotesContainer = () => {
               );
             })}
           </Box>
-        {/* )} */}
+        )}
       </Box>
   );
 };
