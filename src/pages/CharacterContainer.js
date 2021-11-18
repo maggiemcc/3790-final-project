@@ -4,6 +4,7 @@ import {
   Modal,
   IconButton,
   CardActions,
+  Typography
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CharacterCard from "../components/CharacterCard";
@@ -38,7 +39,7 @@ const favoriteStyle = {
 const bull = (
   <Box
     component="span"
-    style={{
+    sx={{
       display: "inline-block",
       mx: "2px",
       transform: "scale(0.8)",
@@ -72,79 +73,78 @@ const CharacterContainer = () => {
     setShowMore((prevShowMore) => !prevShowMore);
   };
   return (
-    <Box id="containerLayout" style={{ padding: "2% 0" }}>
-      <h1>Characters</h1>
+    <Box id="containerLayout" sx={{ padding: "2% 0", color: "white" }}>
+      <Typography variant="h3" fontWeight="bold">Characters</Typography>
 
       {!identity.provisionalUser && !identity.user && (
-        <h3 style={{ color: "white" }}>Please signup or login first.</h3>
+        <Typography variant="h5">Please signup or login first.</Typography>
       )}
 
       {identity.user && (
-        <div style={{margin: 0, padding: 0}}>
-          <div style={favoriteStyle}>
-            <div>
-              <h3
-                style={{
-                  margin: "0 0 0 0",
-                  padding: 0,
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                }}
-              >
+        <Box sx={{ margin: 0, padding: 0 }}>
+          <Box sx={favoriteStyle}>
+            <Box>
+              <Typography variant="h6" sx={{
+                margin: "0 0 0 0",
+                padding: 0,
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}>
                 Favorite Characters
+
                 <CardActions style={{ padding: 0, margin: 0 }}>
                   <IconButton
-                    style={{ padding: 0, margin: 0, color: "white" }}
+                    sx={{ padding: 0, margin: 0, color: "white" }}
                     onClick={toggleShowMoreHandler}
                   >
                     <ExpandMoreIcon />
                   </IconButton>
                 </CardActions>
-              </h3>
-            </div>
+              </Typography>
+            </Box>
 
             {showMore && (
-              <div>
+              <Box>
                 {favorites.map((characterId) => {
                   return (
-                    <div
+                    <Box
                       key={characterId}
-                      style={{padding: "0 5%"}}
+                      sx={{ padding: "0 5%" }}
                     >
-                      <p
-                        style={{
-                          margin: "1% 0",
-                          fontFamily: "courier",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {bull}
-                        {characterId}
-                      </p>
-                    </div>
+                      <Typography variant="body1" sx={{
+                        margin: "1% 0",
+                        fontFamily: "courier",
+                        fontWeight: "bold",
+                        lineHeight: "normal",
+                      }}>
+                        {bull}{characterId}
+                      </Typography>
+                    </Box>
                   );
                 })}
-              </div>
+              </Box>
             )}
-          </div>
+          </Box>
 
-          <div
-            style={{
+          <Box
+            sx={{
               margin: 0,
               color: "black",
               backgroundColor: "white",
               display: "flex",
+              flexWrap: "wrap",
               justifyContent: "center",
+              padding: "2% 0"
             }}
           >
-            <h4>Character Status:</h4>
-            <h4 style={{ color: "darkGreen", padding: "0 2%" }}>Alive</h4>
-            <h4 style={{ color: "darkRed" }}>Dead/Presumed Dead</h4>
-          </div>
+            <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
+            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkGreen", padding: "0 2%" }}>Alive</Typography>
+            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
+          </Box>
 
-          <div
-            style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+          <Box
+            sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
           >
             {breakingBadData.characters.map((character) => {
               return (
@@ -157,15 +157,15 @@ const CharacterContainer = () => {
                 />
               );
             })}
-          </div>
+          </Box>
 
-          <div>
+          <Box>
             <Modal open={open} onClose={handleClose}>
               <Box sx={modalStyle}>
               </Box>
             </Modal>
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
     </Box>
   );
