@@ -1,6 +1,6 @@
 import breakingBad from "../data/breakingBad.jpeg";
-import { Box, Slide } from "@mui/material";
-import { Link} from "react-router-dom";
+import { Box, Slide, Fade, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 
 const Welcome = () => {
@@ -8,35 +8,42 @@ const Welcome = () => {
 
   return (
     <>
-    <Slide in direction="down" timeout={1000}>
-      <img
-        src={breakingBad}
-        alt="breaking bad"
-        style={{
-          width: "100%",
-          borderTop: "2px solid white",
-          borderBottom: "2px solid white",
-          marginBottom: "10px",
-        }}
-      />
+      <Slide in direction="down" timeout={1000}>
+        <img
+          src={breakingBad}
+          alt="breaking bad"
+          style={{
+            width: "100%",
+            borderTop: "2px solid white",
+            borderBottom: "2px solid white",
+            marginBottom: "10px",
+          }}
+        />
       </Slide>
 
       {!identity.provisionalUser && !identity.user && (
-        <div style={{ color: "white" }}>
-          <h1>Welcome to Breaking Bad!</h1>
-          <h2>Please signup or login to view content.</h2>
-        </div>
+        <Fade in timeout={3000}>
+          <Box sx={{ color: "white" }}>
+          <Typography variant="h3" fontWeight="bold">Welcome to Breaking Bad!</Typography>
+          <Typography variant="h5">Please signup or login to view content.</Typography>
+          </Box>
+        </Fade>
+
       )}
 
+
       {identity.provisionalUser && (
-        <div style={{ color: "white" }}>
-          <h1>Thanks for signing up!</h1>
-          <h2>Please check your email "{identity.provisionalUser.email}" to confirm your account.</h2>
-        </div>
+        <Fade in timeout={3000}>
+          <Box sx={{ color: "white" }}>
+          <Typography variant="h3">Thank you for signing up!</Typography>
+          <Typography variant="h5">Please check your email "{identity.provisionalUser.email}"  <br></br> to confirm your account.</Typography>
+          </Box>
+        </Fade>
+
       )}
 
       {identity.user && (
-        <div>
+        <Box>
           <h1>Welcome {identity.user?.user_metadata?.full_name}!</h1>
 
           <div style={{ padding: "5%" }}>
@@ -61,20 +68,16 @@ const Welcome = () => {
                   borderRadius: "10px",
                   contain: "content",
                   width: "100",
-                  maxWidth: 750,
+                  maxWidth: 800,
                   "&:hover": {
                     border: "none",
-                    // backgroundColor: "rgb(223, 182, 0)",
                     backgroundColor: "#d8a025",
-                    // backgroundColor: "rgb(255,215,0)",
                     color: "white",
                     textStroke: "3px black",
                   },
                 }}
               >
-                <h3 style={{ margin: "auto" }}>
-                  View Breaking Bad Episode List
-                </h3>
+                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Episode List</Typography>
 
                 <img
                   src={
@@ -107,7 +110,7 @@ const Welcome = () => {
                   borderRadius: "10px",
                   contain: "content",
                   width: "100",
-                  maxWidth: 750,
+                  maxWidth: 800,
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#5258a9",
@@ -122,7 +125,7 @@ const Welcome = () => {
                   alt="breaking bad quotes"
                   style={{ width: "100%", borderRadius: "10px 0 0 10px" }}
                 />
-                <h3 style={{ margin: "auto" }}>View Breaking Bad Quotes</h3>
+                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Quotes</Typography>
               </Box>
             </Link>
 
@@ -147,7 +150,7 @@ const Welcome = () => {
                   borderRadius: "10px",
                   contain: "content",
                   width: "100",
-                  maxWidth: 750,
+                  maxWidth: 800,
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#6e9036",
@@ -155,7 +158,8 @@ const Welcome = () => {
                   },
                 }}
               >
-                <h3 style={{ margin: "auto" }}>View Breaking Bad Characters</h3>
+                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Characters</Typography>
+
                 <img
                   src={
                     "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/08/Better-Call-Saul-Every-Major-Breaking-Bad-Character-Still-Missing.jpg"
@@ -187,12 +191,10 @@ const Welcome = () => {
                   borderRadius: "10px",
                   contain: "content",
                   width: "100",
-                  maxWidth: 750,
+                  maxWidth: 800,
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#59917f",
-                    // backgroundColor: "darkred",
-                    // backgroundColor: "rgb(65,105,225)",
                     color: "white",
                   },
                 }}
@@ -202,13 +204,12 @@ const Welcome = () => {
                   alt="breaking bad"
                   style={{ width: "100%", borderRadius: "10px 0 0 10px" }}
                 />
-                <h3 style={{ margin: "auto" }}>
-                  View Breaking Bad Character Deaths
-                </h3>
+                <Typography variant="h6" sx={{ margin: "auto", paddingLeft: "5px" }}>View Breaking Bad Character Deaths</Typography>
+
               </Box>
             </Link>
           </div>
-        </div>
+        </Box>
       )}
     </>
   );

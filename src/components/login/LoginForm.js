@@ -53,7 +53,7 @@ const LoginForm = () => {
               })
             } catch (err) {
               console.error(err);
-              alert("Please try again. No user was found with that email, or the password was invalid.");
+              alert(err);
               setStatus({ success: false });
               setErrors({ submit: err.message });
               setSubmitting(false);
