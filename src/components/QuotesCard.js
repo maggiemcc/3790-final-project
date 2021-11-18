@@ -1,6 +1,5 @@
 import * as React from "react";
-// import Card from "@mui/material/Card";
-import Box from "@mui/material/Box";
+import { Box, Typography } from "@mui/material";
 
 
 const QuotesCard = (props) => {
@@ -30,18 +29,17 @@ const QuotesCard = (props) => {
           margin: "auto auto",
         }}
       >
-        <div style={{ padding: "2% 5%", margin: "0", height: "200px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  flexDirection: "column",
-      }}>
-          <h6 style={{ fontWeight: "300", textAlign: "left", margin: 0 }}>#{quote.quote_id}</h6>
-          <h3 style={{ fontWeight: "bold", margin: "15px 0",}}>
-            "{quote.quote}"
-          </h3>
-          <h4 style={{ fontWeight: "300", textAlign: "right", margin: 0 }}>- {quote.author}</h4>
-        </div>
+        <Box sx={{
+          padding: "2% 5%", margin: "0", height: "200px",
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+          flexDirection: "column",
+        }}>
+          <Typography variant="body1" sx={{ textAlign: "left", margin: 0 }}>#{quote.quote_id}</Typography>
+          <Typography sx={{ fontSize: "20px", lineHeight: "normal", textAlign: "center", margin: "15px 0", fontWeight: "bold" }}>"{quote.quote}"</Typography>
+          <Typography variant="body1" sx={{ textAlign: "right", margin: 0 }}>- {quote.author}</Typography>
+        </Box>
 
       </Box>
     </Box>
