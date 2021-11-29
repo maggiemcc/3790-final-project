@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <Box className="App">
-      <NetlifyIdentityContext url="https://dgm-3790-final.netlify.app">
+      <NetlifyIdentityContext url="https://dgm-3790-final-react-app.netlify.app">
         <Box sx={{ maxWidth: 1200, margin: "auto" }}>
           <Box
             sx={{
