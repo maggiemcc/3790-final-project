@@ -27,7 +27,7 @@ const ButtonAppBar = () => {
   const slide = keyframes`
   0% {
     transform: translate3d(0,0,0);
-    color: black;
+    color: green;
   }
   50% {
     transform: translate3d(10px,0,0);
@@ -35,7 +35,7 @@ const ButtonAppBar = () => {
   }
   100% {
     transform: translate3d(0,0,0);
-    color: black;
+    color: green;
   }
   `
   const identity = useIdentityContext();
@@ -119,7 +119,7 @@ const ButtonAppBar = () => {
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
-              sx={{ mr: 2, justifyContent: "right", textAlign: "right", animation: `${slide} 3s ease-in-out 2`, color: "black" }}
+              sx={{ mr: 2, justifyContent: "right", textAlign: "right", animation: `${slide} 3.5s ease-in-out 2`, color: "black" }}
             >
               <MenuIcon />
             </IconButton>
@@ -133,7 +133,7 @@ const ButtonAppBar = () => {
 
               >
                 <Typography variant="h6"
-                  sx={{ animation: `${slide} 3s ease-in-out 2`, color: "black" }}
+                  sx={{ animation: `${slide} 3.5s ease-in-out 2`, color: "black" }}
                 >
                   Breaking Bad
                 </Typography>
