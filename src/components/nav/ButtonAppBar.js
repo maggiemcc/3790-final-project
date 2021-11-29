@@ -20,9 +20,26 @@ import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import { useIdentityContext } from "react-netlify-identity-gotrue";
+import { keyframes } from '@emotion/react';
+
 
 const ButtonAppBar = () => {
+  const slide = keyframes`
+  0% {
+    transform: translate3d(0,0,0);
+    color: black;
+  }
+  50% {
+    transform: translate3d(10px,0,0);
+    color: green;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    color: black;
+  }
+  `
   const identity = useIdentityContext();
+
 
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -52,34 +69,34 @@ const ButtonAppBar = () => {
           </ListItemIcon>
           <ListItemText primary="Welcome" />
         </ListItem>
-          <ListItem button onClick={() => handleNavChoice('episodes', true)}>
-            <ListItemIcon>
-              <LocalMoviesIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Episodes" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('episodes', true)}>
+          <ListItemIcon>
+            <LocalMoviesIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Episodes" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('quotes', true)}>
-            <ListItemIcon>
-              <FormatQuoteIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Quotes" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('quotes', true)}>
+          <ListItemIcon>
+            <FormatQuoteIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Quotes" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('characters', true)}>
-            <ListItemIcon>
-              <GroupIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Characters" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('characters', true)}>
+          <ListItemIcon>
+            <GroupIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Characters" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('deaths', true)}>
-            <ListItemIcon>
-              <HealthAndSafetyIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Character Deaths" />
-          </ListItem>
-        </List>
+        <ListItem button onClick={() => handleNavChoice('deaths', true)}>
+          <ListItemIcon>
+            <HealthAndSafetyIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Character Deaths" />
+        </ListItem>
+      </List>
     </Box>
   );
 
@@ -102,18 +119,24 @@ const ButtonAppBar = () => {
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
-              sx={{ mr: 2, justifyContent: "right", textAlign: "right" }}
+              sx={{ mr: 2, justifyContent: "right", textAlign: "right", animation: `${slide} 3s ease-in-out 2`, color: "black" }}
             >
               <MenuIcon />
             </IconButton>
 
 
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
+            >
               <NavLink
                 to="/"
-                style={{ textDecoration: "none", color: "black" }}
+                style={{ textDecoration: "none"}}
+
               >
-                Breaking Bad
+                <Typography variant="h6"
+                  sx={{ animation: `${slide} 3s ease-in-out 2`, color: "black" }}
+                >
+                  Breaking Bad
+                </Typography>
               </NavLink>
             </Typography>
 
