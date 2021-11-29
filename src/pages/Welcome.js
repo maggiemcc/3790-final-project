@@ -20,9 +20,9 @@ const Welcome = () => {
           }}
         />
       </Slide>
-
+      
       {!identity.provisionalUser && !identity.user && (
-        <Fade in timeout={3000}>
+        <Fade in timeout={3500}>
           <Box sx={{ color: "white" }}>
           <Typography variant="h3" fontWeight="bold">Welcome to Breaking Bad!</Typography>
           <Typography variant="h5">Please signup or login to view content.</Typography>
@@ -31,18 +31,20 @@ const Welcome = () => {
 
       )}
 
-
       {identity.provisionalUser && (
-        <Fade in timeout={3000}>
+        <Fade in timeout={3500}>
           <Box sx={{ color: "white" }}>
-          <Typography variant="h3">Thank you for signing up!</Typography>
-          <Typography variant="h5">Please check your email "{identity.provisionalUser.email}"  <br></br> to confirm your account.</Typography>
+            <Typography variant="h3">Thank you for signing up!</Typography>
+            <Typography variant="h5">
+              Please check your email "{identity.provisionalUser.email}"{" "}
+              <br></br> to confirm your account.
+            </Typography>
           </Box>
         </Fade>
-
       )}
 
       {identity.user && (
+      <Fade in timeout={3500}>
         <Box>
           <h1>Welcome {identity.user?.user_metadata?.full_name}!</h1>
 
@@ -69,15 +71,19 @@ const Welcome = () => {
                   contain: "content",
                   width: "100",
                   maxWidth: 800,
+                  transitionDuration: "1s",
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#d8a025",
                     color: "white",
                     textStroke: "3px black",
+                    transitionDuration: "1s",
                   },
                 }}
               >
-                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Episode List</Typography>
+                <Typography variant="h6" sx={{ margin: "auto" }}>
+                  View Breaking Bad Episode List
+                </Typography>
 
                 <img
                   src={
@@ -111,10 +117,13 @@ const Welcome = () => {
                   contain: "content",
                   width: "100",
                   maxWidth: 800,
+                  transitionDuration: "1s",
+
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#5258a9",
                     color: "white",
+                    transitionDuration: "1s",
                   },
                 }}
               >
@@ -125,7 +134,9 @@ const Welcome = () => {
                   alt="breaking bad quotes"
                   style={{ width: "100%", borderRadius: "10px 0 0 10px" }}
                 />
-                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Quotes</Typography>
+                <Typography variant="h6" sx={{ margin: "auto" }}>
+                  View Breaking Bad Quotes
+                </Typography>
               </Box>
             </Link>
 
@@ -151,14 +162,19 @@ const Welcome = () => {
                   contain: "content",
                   width: "100",
                   maxWidth: 800,
+                  transitionDuration: "1s",
+
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#6e9036",
                     color: "white",
+                    transitionDuration: "1s",
                   },
                 }}
               >
-                <Typography variant="h6" sx={{ margin: "auto" }}>View Breaking Bad Characters</Typography>
+                <Typography variant="h6" sx={{ margin: "auto" }}>
+                  View Breaking Bad Characters
+                </Typography>
 
                 <img
                   src={
@@ -192,10 +208,13 @@ const Welcome = () => {
                   contain: "content",
                   width: "100",
                   maxWidth: 800,
+                  transitionDuration: "1s",
+
                   "&:hover": {
                     border: "none",
                     backgroundColor: "#59917f",
                     color: "white",
+                    transitionDuration: "1s",
                   },
                 }}
               >
@@ -204,12 +223,17 @@ const Welcome = () => {
                   alt="breaking bad"
                   style={{ width: "100%", borderRadius: "10px 0 0 10px" }}
                 />
-                <Typography variant="h6" sx={{ margin: "auto", paddingLeft: "5px" }}>View Breaking Bad Character Deaths</Typography>
-
+                <Typography
+                  variant="h6"
+                  sx={{ margin: "auto", paddingLeft: "5px" }}
+                >
+                  View Breaking Bad Character Deaths
+                </Typography>
               </Box>
             </Link>
           </div>
         </Box>
+      </Fade>
       )}
     </>
   );
