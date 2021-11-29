@@ -30,7 +30,7 @@ const SignupForm = () => {
           initialValues={{
             userName: "John Doe",
             email: "johndoe@example.com",
-            password: "password",
+            // password: "password",
           }}
           validationSchema={Yup.object().shape({
             userName: Yup.string()
