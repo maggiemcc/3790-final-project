@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import { useHistory } from "react-router-dom";
+import { keyframes } from '@emotion/react';
 
 const CharacterCard = (props) => {
   const { character } = props;
@@ -37,6 +38,14 @@ const CharacterCard = (props) => {
     // props.modalFunction(props.character);
     history.push(`/characters/${character.char_id}`)
   };
+
+  const slideColor = keyframes`
+  0%   {color: #F00;}
+  25%  {color: pink;}
+  50%  {color: purple;}
+  75%  {color: pink;}
+  100%  {color: #F00;}
+  `;
 
   return (
     <Card
@@ -91,7 +100,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff" }}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${slideColor} 10s ease-in-out infinite` : "#fff"}}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />
