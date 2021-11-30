@@ -11,6 +11,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Avatar,
 } from "@mui/material";
 import { NavLink, useHistory } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -35,6 +36,23 @@ const ButtonAppBar = () => {
     transform: translate3d(0,0,0);
   }
   `;
+
+  const slideColor = keyframes`
+  0%, 50%, 100%, {
+    color: green;
+    font-weight: bolder;
+  }
+  `;
+
+  const rotate = keyframes `
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  `;
+
   const identity = useIdentityContext();
 
 
@@ -138,26 +156,30 @@ const ButtonAppBar = () => {
             {!identity.user && !identity.provisionalUser && (
               <Box>
                 <Button color="inherit"
-                    sx={{ animation: `${slide} 1.5s ease-in-out 2`, animationDelay: "2s"}}
+                    sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s"}}
                 >
                   <NavLink
                     to="/signup"
                     style={{ textDecoration: "none", color: "black"}}
                   >
-                    <Typography variant="button">
+                    <Typography variant="button"
+                    sx={{animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                    >
                       Signup
                     </Typography>
 
                   </NavLink>
                 </Button>
                 <Button color="inherit"
-                  sx={{ animation: `${slide} 1.5s ease-in-out 2`, animationDelay: "2s"}}
+                  sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s"}}
                 >
                   <NavLink
                     to="/login"
                     style={{ textDecoration: "none", color: "black"}}
                   >
-                    <Typography variant="button">
+                    <Typography variant="button"
+                    sx={{animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                    >
                       Login
                     </Typography>
                   </NavLink>
@@ -177,6 +199,10 @@ const ButtonAppBar = () => {
             )}
 
             {identity.user && (
+              <Box sx={{display: "flex", flexWrap: "wrap"}}>
+              <Avatar sx={{ bgcolor: "green", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
+              animation: `${rotate} 1.5s ease-in-out 2`, animationDelay: "3s"}}>
+              {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
               <Button color="inherit" onClick={identity.logout}>
                 <NavLink
                   to="/"
@@ -185,6 +211,7 @@ const ButtonAppBar = () => {
                   Logout
                 </NavLink>
               </Button>
+              </Box>
             )}
 
           </Toolbar>
