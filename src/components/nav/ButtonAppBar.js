@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   ListItemText,
   Avatar,
+  Grow,
 } from "@mui/material";
 import { NavLink, useHistory } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -77,39 +78,46 @@ const ButtonAppBar = () => {
       role="presentation"
     >
       <List>
-        <ListItem button onClick={() => handleNavChoice('', false)}>
-          <ListItemIcon>
-            <HomeIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Welcome" />
-        </ListItem>
-        <ListItem button onClick={() => handleNavChoice('episodes', true)}>
-          <ListItemIcon>
-            <LocalMoviesIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Episodes" />
-        </ListItem>
-
-        <ListItem button onClick={() => handleNavChoice('quotes', true)}>
-          <ListItemIcon>
-            <FormatQuoteIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Quotes" />
-        </ListItem>
-
-        <ListItem button onClick={() => handleNavChoice('characters', true)}>
-          <ListItemIcon>
-            <GroupIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Characters" />
-        </ListItem>
-
-        <ListItem button onClick={() => handleNavChoice('deaths', true)}>
-          <ListItemIcon>
-            <HealthAndSafetyIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Character Deaths" />
-        </ListItem>
+        <Grow in timeout={800}>
+          <ListItem button onClick={() => handleNavChoice('', false)}>
+            <ListItemIcon>
+              <HomeIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Welcome" />
+          </ListItem>
+        </Grow>
+        <Grow in timeout={1000}>
+          <ListItem button onClick={() => handleNavChoice('episodes', true)}>
+            <ListItemIcon>
+              <LocalMoviesIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Episodes" />
+          </ListItem>
+        </Grow>
+        <Grow in timeout={1300}>
+          <ListItem button onClick={() => handleNavChoice('quotes', true)}>
+            <ListItemIcon>
+              <FormatQuoteIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Quotes" />
+          </ListItem>
+        </Grow>
+        <Grow in timeout={1600}>
+          <ListItem button onClick={() => handleNavChoice('characters', true)}>
+            <ListItemIcon>
+              <GroupIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Characters" />
+          </ListItem>
+        </Grow>
+        <Grow in timeout={1900}>
+          <ListItem button onClick={() => handleNavChoice('deaths', true)}>
+            <ListItemIcon>
+              <HealthAndSafetyIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Character Deaths" />
+          </ListItem>
+        </Grow>
       </List>
     </Box>
   );
@@ -138,16 +146,12 @@ const ButtonAppBar = () => {
             </IconButton>
 
 
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
-            >
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <NavLink
                 to="/"
                 style={{ textDecoration: "none", color: "black" }}
-
               >
-                <Typography variant="h6">
-                  Breaking Bad
-                </Typography>
+                Breaking Bad
               </NavLink>
             </Typography>
 
@@ -155,14 +159,14 @@ const ButtonAppBar = () => {
             {!identity.user && !identity.provisionalUser && (
               <Box>
                 <Button color="inherit"
-                    sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                  sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s" }}
                 >
                   <NavLink
                     to="/signup"
-                    style={{ textDecoration: "none", color: "black"}}
+                    style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                    sx={{animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                      sx={{ animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s" }}
                     >
                       Signup
                     </Typography>
@@ -170,14 +174,14 @@ const ButtonAppBar = () => {
                   </NavLink>
                 </Button>
                 <Button color="inherit"
-                  sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                  sx={{ animation: `${slide} 1.5s ease-in-out 3`, animationDelay: "3s" }}
                 >
                   <NavLink
                     to="/login"
-                    style={{ textDecoration: "none", color: "black"}}
+                    style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                    sx={{animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s"}}
+                      sx={{ animation: `${slideColor} 1.5s ease-in-out 3`, animationDelay: "3s" }}
                     >
                       Login
                     </Typography>
@@ -198,21 +202,21 @@ const ButtonAppBar = () => {
             )}
 
             {identity.user && (
-            <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-              <Avatar sx={{
-                backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
-                animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite", fontSize: 10,
-              }}>
-                {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
-              <Button color="inherit" onClick={identity.logout}>
-                <NavLink
-                  to="/"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Logout
-                </NavLink>
-              </Button>
-            </Box>
+              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                <Avatar sx={{
+                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
+                  animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite",
+                }}>
+                  {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
+                <Button color="inherit" onClick={identity.logout}>
+                  <NavLink
+                    to="/"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Logout
+                  </NavLink>
+                </Button>
+              </Box>
             )}
 
           </Toolbar>

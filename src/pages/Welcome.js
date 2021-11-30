@@ -1,5 +1,5 @@
 import breakingBad from "../data/breakingBad.jpeg";
-import { Box, Slide, Fade, Typography } from "@mui/material";
+import { Box, Fade, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 
@@ -8,7 +8,6 @@ const Welcome = () => {
 
   return (
     <>
-      <Slide in direction="down" timeout={1000}>
         <img
           src={breakingBad}
           alt="breaking bad"
@@ -19,7 +18,6 @@ const Welcome = () => {
             marginBottom: "10px",
           }}
         />
-      </Slide>
 
       {!identity.provisionalUser && !identity.user && (
         <Fade in timeout={3500}>
