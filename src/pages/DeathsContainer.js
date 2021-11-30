@@ -9,8 +9,6 @@ const DeathsContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <Slide in direction="right" timeout={2000}>
-
     <Box sx={{ padding: "2%", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Character Deaths</Typography>
 
@@ -20,6 +18,8 @@ const DeathsContainer = () => {
 
 
       {identity.user && (
+    <Slide in direction="right" timeout={1000}>
+
         <Box
           style={{
             display: "flex",
@@ -37,9 +37,9 @@ const DeathsContainer = () => {
             );
           })}
         </Box>
+        </Slide>
       )}
     </Box>
-    </Slide>
   );
 };
 

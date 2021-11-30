@@ -74,8 +74,6 @@ const CharacterContainer = () => {
     setShowMore((prevShowMore) => !prevShowMore);
   };
   return (
-    <Slide in direction="right" timeout={2000}>
-
     <Box id="containerLayout" sx={{ padding: "2% 0", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Characters</Typography>
 
@@ -146,6 +144,7 @@ const CharacterContainer = () => {
             <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
           </Box>
 
+          <Slide in direction="right" timeout={1000}>
           <Box
             sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
           >
@@ -161,6 +160,7 @@ const CharacterContainer = () => {
               );
             })}
           </Box>
+          </Slide>
 
           <Box>
             <Modal open={open} onClose={handleClose}>
@@ -171,7 +171,6 @@ const CharacterContainer = () => {
         </Box>
       )}
     </Box>
-    </Slide>
   );
 };
 

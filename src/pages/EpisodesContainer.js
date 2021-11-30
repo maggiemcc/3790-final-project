@@ -11,7 +11,6 @@ const EpisodesContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <Slide in direction="right" timeout={2000}>
     <Box sx={{padding: "2%", color: "white"}}>
       <Typography variant="h3" fontWeight="bold">Episodes</Typography>
 
@@ -21,6 +20,7 @@ const EpisodesContainer = () => {
       )}
 
       {identity.user && (
+    <Slide in direction="right" timeout={1000}>
         <Box sx={{
           justifyContent: "center",
           display: "block",
@@ -38,9 +38,9 @@ const EpisodesContainer = () => {
             );
           })}
         </Box>
+    </Slide>
       )}
     </Box>
-    </Slide>
   );
 };
 
