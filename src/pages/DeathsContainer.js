@@ -18,7 +18,7 @@ const DeathsContainer = () => {
 
 
       {identity.user && (
-    <Slide in direction="right" timeout={1000}>
+    <Slide in direction="right" timeout={1200}>
 
         <Box
           style={{

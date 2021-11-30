@@ -20,7 +20,7 @@ const QuotesContainer = () => {
         )}
 
         {identity.user && (
-    <Slide in direction="right" timeout={1000}>
+    <Slide in direction="right" timeout={1300}>
           <Box
           sx={{
             display: "flex",

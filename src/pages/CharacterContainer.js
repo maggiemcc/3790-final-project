@@ -144,7 +144,7 @@ const CharacterContainer = () => {
             <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
           </Box>
 
-          <Slide in direction="right" timeout={1000}>
+          <Slide in direction="right" timeout={1200}>
           <Box
             sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
           >
