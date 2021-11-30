@@ -100,7 +100,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${slideColor} 10s ease-in-out infinite` : "#fff"}}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${slideColor} 20s ease-in-out infinite` : "#fff"}}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />
