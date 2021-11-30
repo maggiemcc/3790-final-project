@@ -27,17 +27,14 @@ const ButtonAppBar = () => {
   const slide = keyframes`
   0% {
     transform: translate3d(0,0,0);
-    color: green;
   }
   50% {
-    transform: translate3d(10px,0,0);
-    color: green;
+    transform: translate3d(-10px,0,0);
   }
   100% {
     transform: translate3d(0,0,0);
-    color: green;
   }
-  `
+  `;
   const identity = useIdentityContext();
 
 
@@ -119,7 +116,6 @@ const ButtonAppBar = () => {
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
-              sx={{ mr: 2, justifyContent: "right", textAlign: "right", animation: `${slide} 3.5s ease-in-out 2`, color: "black" }}
             >
               <MenuIcon />
             </IconButton>
@@ -129,12 +125,10 @@ const ButtonAppBar = () => {
             >
               <NavLink
                 to="/"
-                style={{ textDecoration: "none"}}
+                style={{ textDecoration: "none", color: "black" }}
 
               >
-                <Typography variant="h6"
-                  sx={{ animation: `${slide} 3.5s ease-in-out 2`, color: "black" }}
-                >
+                <Typography variant="h6">
                   Breaking Bad
                 </Typography>
               </NavLink>
@@ -143,20 +137,29 @@ const ButtonAppBar = () => {
 
             {!identity.user && !identity.provisionalUser && (
               <Box>
-                <Button color="inherit">
+                <Button color="inherit"
+                    sx={{ animation: `${slide} 1.5s ease-in-out 2`, animationDelay: "2s"}}
+                >
                   <NavLink
                     to="/signup"
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black"}}
                   >
-                    Signup
+                    <Typography variant="button">
+                      Signup
+                    </Typography>
+
                   </NavLink>
                 </Button>
-                <Button color="inherit">
+                <Button color="inherit"
+                  sx={{ animation: `${slide} 1.5s ease-in-out 2`, animationDelay: "2s"}}
+                >
                   <NavLink
                     to="/login"
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black"}}
                   >
-                    Login
+                    <Typography variant="button">
+                      Login
+                    </Typography>
                   </NavLink>
                 </Button>
               </Box>
