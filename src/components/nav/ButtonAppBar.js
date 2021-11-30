@@ -205,7 +205,7 @@ const ButtonAppBar = () => {
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 <Avatar sx={{
                   backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
-                  animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite",
+                  animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite", fontSize: 18,
                 }}>
                   {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
                 <Button color="inherit" onClick={identity.logout}>

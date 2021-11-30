@@ -2,7 +2,7 @@ import * as React from "react";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import QuotesCard from "../components/QuotesCard";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Slide } from "@mui/material";
 
 
 const QuotesContainer = () => {
@@ -11,6 +11,7 @@ const QuotesContainer = () => {
 
 
   return (
+    <Slide in direction="right" timeout={2000}>
     <Box sx={{ padding: "2%", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Quotes</Typography>
 
@@ -40,6 +41,7 @@ const QuotesContainer = () => {
           </Box>
         )}
       </Box>
+      </Slide>
   );
 };
 

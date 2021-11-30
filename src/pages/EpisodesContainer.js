@@ -2,7 +2,7 @@ import * as React from "react";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import EpisodesCard from "../components/EpisodesCard";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Slide } from "@mui/material";
 
 
 
@@ -11,6 +11,7 @@ const EpisodesContainer = () => {
   const identity = useIdentityContext();
 
   return (
+    <Slide in direction="right" timeout={2000}>
     <Box sx={{padding: "2%", color: "white"}}>
       <Typography variant="h3" fontWeight="bold">Episodes</Typography>
 
@@ -39,6 +40,7 @@ const EpisodesContainer = () => {
         </Box>
       )}
     </Box>
+    </Slide>
   );
 };
 

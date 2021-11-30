@@ -4,7 +4,8 @@ import {
   Modal,
   IconButton,
   CardActions,
-  Typography
+  Typography,
+  Slide
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CharacterCard from "../components/CharacterCard";
@@ -73,6 +74,8 @@ const CharacterContainer = () => {
     setShowMore((prevShowMore) => !prevShowMore);
   };
   return (
+    <Slide in direction="right" timeout={2000}>
+
     <Box id="containerLayout" sx={{ padding: "2% 0", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Characters</Typography>
 
@@ -168,6 +171,7 @@ const CharacterContainer = () => {
         </Box>
       )}
     </Box>
+    </Slide>
   );
 };
 
