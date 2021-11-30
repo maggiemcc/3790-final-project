@@ -44,13 +44,12 @@ const ButtonAppBar = () => {
   }
   `;
 
-  const rotate = keyframes `
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  const colorChange = keyframes`
+  0%   {background-color: darkGreen;}
+  25%  {background-color: green;}
+  50% {background-color: rgb(98, 201, 98);}
+  75%  {background-color: green;}
+  100%  {background-color: darkGreen;}
   `;
 
   const identity = useIdentityContext();
@@ -199,10 +198,12 @@ const ButtonAppBar = () => {
             )}
 
             {identity.user && (
-              <Box sx={{display: "flex", flexWrap: "wrap"}}>
-              <Avatar sx={{ bgcolor: "green", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
-              animation: `${rotate} 1.5s ease-in-out 2`, animationDelay: "3s"}}>
-              {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
+            <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+              <Avatar sx={{
+                backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
+                animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite", fontSize: 10,
+              }}>
+                {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
               <Button color="inherit" onClick={identity.logout}>
                 <NavLink
                   to="/"
@@ -211,7 +212,7 @@ const ButtonAppBar = () => {
                   Logout
                 </NavLink>
               </Button>
-              </Box>
+            </Box>
             )}
 
           </Toolbar>
