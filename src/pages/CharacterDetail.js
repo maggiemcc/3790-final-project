@@ -3,45 +3,24 @@ import { useParams } from "react-router-dom";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import {
   Box,
-  Typography
+  Typography,
+  List,
+  ListItem,
 } from "@mui/material";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
-
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 let imageStyle = {
-  width: "auto",
-  overflow: "hidden",
   padding: 0,
   margin: "auto",
-  border: "3px solid white",
+  border: "2px solid white",
   borderRadius: "5px",
-  height: "100%",
-  maxHeight: "350px",
   textAlign: "right",
+  width: "250px",
+  height: "300px",
+  objectFit: "cover",
 };
 
-const characterInfoStyle = {
-  margin: "0 auto",
-  padding: "10px 0",
-  display: "block",
-  paddingRight: "0",
-  width: "100%",
-  fontSize: "14px",
-  lineheight: "normal"
-};
-
-const bull = (
-  <Box
-    component="span"
-    sx={{
-      display: "inline-block",
-      mx: "2px",
-      transform: "scale(0.8)",
-    }}
-  >
-    •
-  </Box>
-);
 
 const CharacterDetail = () => {
   const params = useParams();
@@ -52,66 +31,105 @@ const CharacterDetail = () => {
     return item.char_id === Number(params.characterId);
   });
 
-
-
   return (
-
     <Box sx={{ padding: "2%", color: "white" }}>
       {!identity.provisionalUser && !identity.user && (
         <Typography variant="h5">Please signup or login first.</Typography>
       )}
 
       {identity.user && (
-        <Box sx={{ color: "white", padding: "3%", margin: "auto" }}>
-          <Typography variant="h3" fontWeight="bold">Character: {character.name}</Typography>
+      <Box sx={{ color: "white", padding: "3%", margin: "auto" }}>
+        <Typography variant="h3" fontWeight="bold">
+          Character: {character.name}
+        </Typography>
+
+        <Box
+          sx={{
+            width: "100%",
+            textAlign: "left",
+            display: "flex",
+            flexWrap: "wrap",
+            maxWidth: "750px",
+            margin: "2% auto",
+          }}
+        >
+          <Box sx={{ textAlign: "left", margin: "auto" }}>
+            <img
+              style={imageStyle}
+              src={character.img}
+              alt="characterpicture"
+            />
+          </Box>
 
           <Box
             sx={{
+              margin: "20px auto",
+              backgroundColor: "white",
+              color: "black",
+              borderRadius: "10px",
+              padding: "0 2%",
               width: "100%",
-              textAlign: "left",
-              display: "flex",
-              flexWrap: "wrap",
-              maxWidth: "750px",
-              margin: "2% auto",
+              maxWidth: "350px",
+              height: "auto",
+              minHeight: "300px"
             }}
           >
-            <Box sx={{ textAlign: "left", margin: "auto", }}>
-              <img style={imageStyle} src={character.img} alt="characterpicture" />
-            </Box>
+            <List>
+              <ListItem sx={{margin: 0,}}>
+                  <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                  <b>Born:</b> {character.birthday}
+                </Typography>
+              </ListItem>
 
-            <Box style={{ margin: "20px auto" }}>
-              <Typography variant="h6" sx={{ textDecoration: "underline", marginTop: "0" }}>Chracter Information:</Typography>
-              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Born:</b> {character.birthday}</Typography>
-              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Nickname:</b> {character.nickname}</Typography>
-              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Portrayed By:</b> {character.portrayed}</Typography>
-              <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Status:</b> {character.status}</Typography>
+              <ListItem>
+                <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                  <b>Nickname:</b> {character.nickname}
+                </Typography>
+              </ListItem>
 
-              <Box sx={{ margin: 0, display: "inline" }}>
-                <Typography variant="body1" sx={characterInfoStyle}> {bull} <b>Occupation(s):</b></Typography>
-                <Box sx={{ paddingLeft: "15px" }}>
-                  {character.occupation.map((occupation, index) => {
-                    return (
-                      <Typography variant="body1"
-                        key={occupation}
-                        sx={{
-                          lineHeight: "24px",
-                          display: "block",
-                          fontSize: 14,
-                          margin: 0,
-                        }}
-                      >
-                        - {(index ? " " : " ") + occupation}
-                      </Typography>
-                    );
-                  })}
-                </Box>
-              </Box>
-            </Box>
+              <ListItem>
+                <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                  <b>Portrayed By:</b> {character.portrayed}
+                </Typography>
+              </ListItem>
 
+              <ListItem>
+                <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                  <b>Status:</b> {character.status}
+                </Typography>
+              </ListItem>
+
+              <ListItem>
+                <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                  <b>Occupation(s):</b>
+                </Typography>
+              </ListItem>
+              <List sx={{ paddingLeft: "5%", paddingTop: 0, margin: 0 }}>
+                    {character.occupation.map((occupation, index) => {
+                      return (
+                        <ListItem>
+                          <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
+                        <Typography
+                          variant="body1"
+                          sx={{fontSize: 16,}}
+                          key={occupation}
+                        >
+                          {(index ? " " : " ") + occupation}
+                        </Typography>
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+            </List>
           </Box>
         </Box>
+      </Box>
       )}
-
     </Box>
   );
 };
