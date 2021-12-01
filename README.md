@@ -1,14 +1,17 @@
-## Fourth Course Project: Adding SignUp/Login form and Auth:
+## Final Project: Adding Animation:
 
-- Create a Signup form that captures at least 3 bits of user information.
-    - The elements in the form must indicate if they are required or not.
-    - The elements in the form must be validated.
-    - The submission of the form must be stored in local state using the useContext hook.
-- State must be handled using the useState and useContext hooks.
-- Have component side effects that are handled using the useEffect hookcomponent(s).
-- Use an authorization context to decide if a page should be shown or not based on a User being logged in or not.
-- Have at least 4 distinct routes to which the user can navigate.
+- Effectively use conditional logic and JavaScript array methods(e.g. Filter, Map, Reduce, Find) to render large lists.
+- Encapsulate your code as React functional components.
+- Work with command-line tools and NPM to create and manage your project within a real development toolset.
+- Allow communication between components using props and the Context API.
+- Present a form for user input that provides useful form validation and feedback for at least 3 data input items (e.g. name, password).
+- Create at least 5 custom components and use them within at least two of your other components.
+- Use a mix of CSS animations and Transition Component transitions to enhance some aspects of your project.
+- Connect to a server using Netlify functions and display retrieved data including at least 5 item details (accessed by details route) in your UI.
+- Provide at least 3 different routes with navigation between them using React Router.
+- Manage your application's general and signup/login Authentication state using Hooks and the Context API.
+- Structure, document, and deploy your final project code according to common industry practices.
 
 ## Netlify:
 
-- [Netlify Project 4](https://react-app-four.netlify.app/)
+- [Netlify Final Project](https://dgm-3790-final-react-app.netlify.app/)
