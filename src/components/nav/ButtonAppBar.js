@@ -39,11 +39,10 @@ const ButtonAppBar = () => {
   `;
 
   const colorChange = keyframes`
-  0%   {background-color: darkGreen;}
-  25%  {background-color: green;}
-  50% {background-color: rgb(98, 201, 98);}
-  75%  {background-color: green;}
-  100%  {background-color: darkGreen;}
+  0%, 100% {background-color: black;}
+  10%, 80% {background-color: darkGreen;}
+  40% {background-color: green;}
+  60% {background-color: rgb(98, 201, 98);}
   `;
 
   const identity = useIdentityContext();
@@ -138,15 +137,15 @@ const ButtonAppBar = () => {
             </IconButton>
 
 
-            <Box sx={{flexGrow: 1}}>
+            <Box sx={{ flexGrow: 1 }}>
               <NavLink
                 to="/"
                 style={{ textDecoration: "none", color: "black", }}>
                 <Typography variant="h6">
-                Breaking Bad
+                  Breaking Bad
                 </Typography>
               </NavLink>
-              </Box>
+            </Box>
 
 
             {!identity.user && !identity.provisionalUser && (
@@ -157,7 +156,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`,}}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
                     >
                       Signup
                     </Typography>
@@ -170,7 +169,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`,}}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
                     >
                       Login
                     </Typography>
