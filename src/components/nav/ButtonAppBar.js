@@ -30,8 +30,10 @@ const ButtonAppBar = () => {
   0, 100% {
     color: black;
   }
-
-  50%, {
+  25%, 75% {
+    color: darkGreen;
+  }
+  50% {
     color: green;
   }
   `;
@@ -155,7 +157,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 15s ease-in-out infinite`, animationDelay: "3s" }}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`,}}
                     >
                       Signup
                     </Typography>
@@ -168,7 +170,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 15s ease-in-out infinite`, animationDelay: "3s" }}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`,}}
                     >
                       Login
                     </Typography>
