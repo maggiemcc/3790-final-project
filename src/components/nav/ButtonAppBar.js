@@ -26,7 +26,7 @@ import { keyframes } from '@emotion/react';
 
 
 const ButtonAppBar = () => {
-  const slideColor = keyframes`
+  const buttonColor = keyframes`
   0, 100% {
     color: black;
   }
@@ -131,22 +131,20 @@ const ButtonAppBar = () => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              onClick={toggleDrawer}
-                sx={{animation: `${slideColor} 5s ease-in-out 3`, animationDelay: "3s" }}>
+              onClick={toggleDrawer}>
               <MenuIcon />
             </IconButton>
 
 
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Box sx={{flexGrow: 1}}>
               <NavLink
                 to="/"
-                style={{ textDecoration: "none", color: "black",}}
-              >
-                <Typography sx={{animation: `${slideColor} 5s ease-in-out 3`, animationDelay: "3s", fontWeight: "bold" }}>
+                style={{ textDecoration: "none", color: "black", }}>
+                <Typography variant="h6">
                 Breaking Bad
                 </Typography>
               </NavLink>
-            </Typography>
+              </Box>
 
 
             {!identity.user && !identity.provisionalUser && (
@@ -157,7 +155,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${slideColor} 5s ease-in-out infinite`, animationDelay: "3s" }}
+                      sx={{ animation: `${buttonColor} 15s ease-in-out infinite`, animationDelay: "3s" }}
                     >
                       Signup
                     </Typography>
@@ -170,7 +168,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${slideColor} 5s ease-in-out 3`, animationDelay: "3s" }}
+                      sx={{ animation: `${buttonColor} 15s ease-in-out infinite`, animationDelay: "3s" }}
                     >
                       Login
                     </Typography>
@@ -193,8 +191,8 @@ const ButtonAppBar = () => {
             {identity.user && (
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 <Avatar sx={{
-                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 25, height: 25,
-                  animation: `${colorChange} ease-in-out`, animationDuration: "10s", animationIterationCount: "infinite", fontSize: 18,
+                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
+                  animation: `${colorChange} 15s ease-in-out infinite`, animationDelay: "3s", fontSize: 18,
                 }}>
                   {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
                 <Button color="inherit" onClick={identity.logout}>
