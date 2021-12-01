@@ -137,15 +137,13 @@ const ButtonAppBar = () => {
             </IconButton>
 
 
-            <Box sx={{ flexGrow: 1 }}>
+            <Typography variant="h6" compontent="div" sx={{ flexGrow: 1 }}>
               <NavLink
                 to="/"
-                style={{ textDecoration: "none", color: "black", }}>
-                <Typography variant="h6">
+                style={{ textDecoration: "none", color: "black" }}>
                   Breaking Bad
-                </Typography>
               </NavLink>
-            </Box>
+            </Typography>
 
 
             {!identity.user && !identity.provisionalUser && (
