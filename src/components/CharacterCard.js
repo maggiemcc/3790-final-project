@@ -1,5 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
@@ -11,17 +12,16 @@ import { keyframes } from '@emotion/react';
 
 const CharacterCard = (props) => {
   const { character } = props;
-  const statusColor =
-    character.status === "Alive" ? "darkgreen" : "darkred";
+  const statusColor = character.status === "Alive" ? "darkgreen" : "darkred";
 
   let imageStyle = {
-    height: "auto",
-    maxWidth: "190px",
-    maxHeight: "180px",
-    overflow: "hidden",
+    display: "center",
+    width:  "150px",
+    height: "200px",
+    objectFit: "cover",
     borderWidth: 5,
-    border: "3px solid white",
-    borderRadius: 5,
+    border: `2px solid white`,
+    borderRadius: "5px",
     padding: 0,
     margin: 0,
   };
@@ -35,15 +35,20 @@ const CharacterCard = (props) => {
 
   const history = useHistory();
   const handleInfoClick = () => {
-    // props.modalFunction(props.character);
     history.push(`/characters/${character.char_id}`)
   };
 
-  const slideColor = keyframes`
+  const heartColor = keyframes`
   0%   {color: #F00;}
-  25%  {color: pink;}
-  50%  {color: purple;}
-  75%  {color: pink;}
+  10%  {color: pink;}
+  20%  {color: purple;}
+  30%  {color: blue;}
+  40%  {color: green;}
+  50%   {color: yellow;}
+  60%  {color: green;}
+  70%  {color: blue;}
+  80%  {color: purple;}
+  90%  {color: pink;}
   100%  {color: #F00;}
   `;
 
@@ -54,11 +59,11 @@ const CharacterCard = (props) => {
         display: "flex",
         flexDirection: "column",
         m: 2,
-        bgcolor: "black",
+        backgroundColor: "black",
         border: "2px solid white",
         "&:hover": {
           borderRadius: 4,
-          bgcolor: statusColor,
+          backgroundColor: `${statusColor}`,
         },
       }}
     >
@@ -70,19 +75,19 @@ const CharacterCard = (props) => {
         }}
       >
         <Typography
-          sx={{ fontWeight: "bold", marginTop: "2%" }}
+          sx={{ fontWeight: "bold", margin: "2% 0",}}
           color="primary.contrastText"
           typography="h6"
         >
           {character.name} <br></br>
         </Typography>
-        <div>
-          <div>
-            <div style={{ margin: "auto" }}>
+        <Box>
+          <Box>
+            <Box sx={{ margin: "auto" }}>
               <img style={imageStyle} src={character.img} alt="characterpicture" />
 
-              <div
-                style={{
+              <Box
+                sx={{
                   display: "flex",
                   margin: "0 auto",
                   padding: 0,
@@ -93,14 +98,14 @@ const CharacterCard = (props) => {
                 }}
               >
                 <CardActions
-                  style={{
+                  sx={{
                     margin: "auto",
                     textAlign: "center",
                     justifyContent: "space-evenly",
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${slideColor} 30s ease-in-out infinite` : "#fff"}}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 400s ease infinite` : "#fff"}}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />
@@ -112,10 +117,10 @@ const CharacterCard = (props) => {
                     <InfoIcon />
                   </IconButton>
                 </CardActions>
-              </div>
-            </div>
-          </div>
-        </div>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </CardContent>
     </Card>
   );
