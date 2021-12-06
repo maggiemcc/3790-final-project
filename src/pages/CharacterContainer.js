@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CharacterCard from "../components/CharacterCard";
-import "../components/FilmCard.css";
+// import "../components/FilmCard.css";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 

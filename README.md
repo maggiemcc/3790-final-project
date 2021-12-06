@@ -1,5 +1,4 @@
-## Final Project: Adding Animation:
-
+## Final Project/Adding Animation:
 - Effectively use conditional logic and JavaScript array methods(e.g. Filter, Map, Reduce, Find) to render large lists.
 - Encapsulate your code as React functional components.
 - Work with command-line tools and NPM to create and manage your project within a real development toolset.

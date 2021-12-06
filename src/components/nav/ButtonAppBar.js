@@ -154,7 +154,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
+                      sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
                     >
                       Signup
                     </Typography>
@@ -167,7 +167,7 @@ const ButtonAppBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
+                      sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
                     >
                       Login
                     </Typography>
