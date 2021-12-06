@@ -26,8 +26,8 @@ const EpisodesContainer = () => {
             <TableHead>
               <TableRow sx={{margin: "auto", backgroundColor: "white",}}>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "150px"}}>Name</TableCell>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "50px"}}>Season</TableCell>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "50px"}}>Episode</TableCell>
+                {/* <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "50px"}}>Season</TableCell> */}
+                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "80px"}}>Number</TableCell>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold"}}>Air Date</TableCell>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "150px"}}>Character Appearances</TableCell>
               </TableRow>
