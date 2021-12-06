@@ -16,7 +16,6 @@ const EpisodesCard = (props) => {
       >
         <TableCell sx={{color: "white", maxWidth: "150px"}}>{episode.title}</TableCell>
         <TableCell sx={{color: "white", maxWidth: "80px",}}>S{episode.season} E{episode.episode}</TableCell>
-        {/* <TableCell sx={{color: "white", maxWidth: "50px"}}>{episode.episode}</TableCell> */}
         <TableCell sx={{color: "white",}}>{episode.air_date}</TableCell>
         <TableCell sx={{color: "white", maxWidth: "150px"}}>
           {episode.characters.map((character, index) => {
