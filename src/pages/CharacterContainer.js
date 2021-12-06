@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CharacterCard from "../components/CharacterCard";
-// import "../components/FilmCard.css";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 
@@ -54,20 +53,21 @@ const CharacterContainer = () => {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const [favorites, setFavorites] = React.useState([]);
-  const breakingBadData = useBreakingBadContext();
+  // const [favorites, setFavorites] = React.useState([]);
+  // const breakingBadData = useBreakingBadContext();
+  const { characters, favorites } = useBreakingBadContext();
   const identity = useIdentityContext();
 
 
-  const addToFavorites = (character) => {
-    if (!favorites.includes(character.name)) {
-      setFavorites((prevState) => [...prevState, character.name]);
-    } else {
-      setFavorites(() => {
-        return favorites.filter((item) => item !== character.name);
-      });
-    }
-  };
+  // const addToFavorites = (character) => {
+  //   if (!favorites.includes(character.name)) {
+  //     setFavorites((prevState) => [...prevState, character.name]);
+  //   } else {
+  //     setFavorites(() => {
+  //       return favorites.filter((item) => item !== character.name);
+  //     });
+  //   }
+  // };
 
   const [showMore, setShowMore] = React.useState(false);
   const toggleShowMoreHandler = () => {
@@ -145,21 +145,21 @@ const CharacterContainer = () => {
           </Box>
 
           <Slide in direction="right" timeout={1200}>
-          <Box
-            sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-          >
-            {breakingBadData.characters.map((character) => {
-              return (
-                <CharacterCard
-                  key={character.char_id}
-                  addToFavoritesFunction={addToFavorites}
-                  modalFunction={handleOpen}
-                  character={{ ...character }}
-                  sx={{ margin: "auto" }}
-                />
-              );
-            })}
-          </Box>
+            <Box
+              sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+            >
+              {characters.map((character) => {
+                return (
+                  <CharacterCard
+                    key={character.char_id}
+                    // addToFavoritesFunction={addToFavorites}
+                    modalFunction={handleOpen}
+                    character={{ ...character }}
+                    sx={{ margin: "auto" }}
+                  />
+                );
+              })}
+            </Box>
           </Slide>
 
           <Box>

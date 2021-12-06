@@ -108,6 +108,15 @@ const ButtonAppBar = () => {
             <ListItemText primary="Character Deaths" />
           </ListItem>
         </Grow>
+
+      {/* <Grow in timeout={2300}>
+          <ListItem button onClick={() => handleNavChoice('deaths', true)}>
+            <ListItemIcon>
+              <HealthAndSafetyIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Favorites" />
+          </ListItem>
+        </Grow> */}
       </List>
     </Box>
   );

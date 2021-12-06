@@ -6,6 +6,7 @@ const BreakingBadContext = React.createContext({
   quotes: [],
   episodes: [],
   deaths: [],
+  favorites: [],
 })
 
 export const BreakingBadContextProvider = (props) => {
@@ -13,6 +14,19 @@ export const BreakingBadContextProvider = (props) => {
   const [quotes, setQuotes] = React.useState([]);
   const [episodes, setEpisodes] = React.useState([]);
   const [deaths, setDeaths] = React.useState([]);
+  const [favorites, setFavorites] = React.useState([]);
+
+
+  const updateFavorites = (character) => {
+    if (!favorites.includes(character.name)) {
+      setFavorites((prevState) => [...prevState, character.name]);
+    } else {
+      setFavorites(() => {
+        return favorites.filter((item) => item !== character.name);
+      });
+    }
+  };
+
 
   React.useEffect(() => {
     const fetchBreakingBad = async () => {
@@ -51,6 +65,8 @@ export const BreakingBadContextProvider = (props) => {
       quotes,
       episodes,
       deaths,
+      favorites,
+      updateFavorites,
     }}>
       {props.children}
     </BreakingBadContext.Provider>

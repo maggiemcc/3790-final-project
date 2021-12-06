@@ -9,9 +9,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import { useHistory } from "react-router-dom";
 import { keyframes } from '@emotion/react';
+import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 
 const CharacterCard = (props) => {
   const { character } = props;
+  const { favorites, updateFavorites } = useBreakingBadContext();
+  const [favorite, setFavorite] = React.useState(false);
+
   const statusColor = character.status === "Alive" ? "darkgreen" : "darkred";
 
   let imageStyle = {
@@ -26,31 +30,30 @@ const CharacterCard = (props) => {
     margin: 0,
   };
 
-  const [favorite, setFavorite] = React.useState(false);
-
-  const handleFavoriteClick = () => {
-    setFavorite(!favorite);
-    props.addToFavoritesFunction(character);
-  };
-
   const history = useHistory();
   const handleInfoClick = () => {
     history.push(`/characters/${character.char_id}`)
   };
 
+
+  const handleFavoriteClick = () => {
+    setFavorite(!favorite);
+    // props.addToFavoritesFunction(character);
+    updateFavorites(character);
+  };
+
   const heartColor = keyframes`
-  0%   {color: #F00;}
-  10%  {color: pink;}
-  20%  {color: purple;}
-  30%  {color: blue;}
-  40%  {color: green;}
-  50%   {color: yellow;}
-  60%  {color: green;}
-  70%  {color: blue;}
-  80%  {color: purple;}
-  90%  {color: pink;}
-  100%  {color: #F00;}
+  0%, 100% {color: #F00;}
+  10%, 90% {color: pink;}
+  20%, 80% {color: purple;}
+  30%, 70% {color: blue;}
+  40%, 60% {color: green;}
+  50% {color: yellow;}
   `;
+
+  React.useEffect(() => {
+    favorites.includes(character.name) ? setFavorite(true) : setFavorite(false);
+  }, [character.name, favorites]);
 
   return (
     <Card
