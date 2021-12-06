@@ -68,7 +68,10 @@ const CharacterCard = (props) => {
         border: "2px solid white",
         "&:hover": {
           borderRadius: 4,
-          backgroundColor: `${statusColor}`,
+          // backgroundColor: `${statusColor}`,
+          border: `10px solid ${statusColor}`,
+          padding: 0,
+          width: 250,
         },
       }}
     >
@@ -110,7 +113,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 400s ease infinite` : "#fff" }}
+                    sx={{p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 250s ease infinite` : "#fff" }}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />
