@@ -5,6 +5,10 @@ import { useIdentityContext } from "react-netlify-identity-gotrue";
 
 const Welcome = () => {
   const identity = useIdentityContext();
+  const removeDefaultStyle ={
+    maxWidth: 800,
+    textDecoration: "none",
+  }
 
   return (
     <>
@@ -49,10 +53,7 @@ const Welcome = () => {
             <div style={{ padding: "5%" }}>
               <Link
                 to="/episodes"
-                style={{
-                  maxWidth: 800,
-                  textDecoration: "none",
-                }}
+                style={removeDefaultStyle}
               >
                 <Box
                   sx={{
@@ -95,10 +96,7 @@ const Welcome = () => {
 
               <Link
                 to="/quotes"
-                style={{
-                  maxWidth: 800,
-                  textDecoration: "none",
-                }}
+                style={removeDefaultStyle}
               >
                 <Box
                   sx={{
@@ -140,10 +138,7 @@ const Welcome = () => {
 
               <Link
                 to="/characters"
-                style={{
-                  maxWidth: 800,
-                  textDecoration: "none",
-                }}
+                style={removeDefaultStyle}
               >
                 <Box
                   sx={{
@@ -186,10 +181,7 @@ const Welcome = () => {
 
               <Link
                 to="/deaths"
-                style={{
-                  maxWidth: 800,
-                  textDecoration: "none",
-                }}
+                style={removeDefaultStyle}
               >
                 <Box
                   sx={{
@@ -207,7 +199,6 @@ const Welcome = () => {
                     width: "100",
                     maxWidth: 800,
                     transitionDuration: "1s",
-
                     "&:hover": {
                       border: "none",
                       backgroundColor: "#59917f",

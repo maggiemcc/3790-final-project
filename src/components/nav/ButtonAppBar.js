@@ -26,23 +26,21 @@ import { keyframes } from '@emotion/react';
 
 
 const ButtonAppBar = () => {
+  const removeDefaultStyle = {
+    textDecoration: "none",
+    color: "black"
+  };
+
   const buttonColor = keyframes`
-  0, 100% {
-    color: black;
-  }
-  25%, 75% {
-    color: darkGreen;
-  }
-  50% {
-    color: green;
-  }
+  0, 100% {color: black;}
+  25%, 75% {color: darkGreen;}
+  50% {color: green;}
   `;
 
   const colorChange = keyframes`
-  0%, 100% {background-color: black;}
-  10%, 80% {background-color: darkGreen;}
-  40% {background-color: green;}
-  60% {background-color: rgb(98, 201, 98);}
+  0%, 100% {background-color: #006400;}
+  20%, 80% {background-color: #008000;}
+  50% {background-color: #6B8E23;}
   `;
 
   const identity = useIdentityContext();
@@ -70,7 +68,7 @@ const ButtonAppBar = () => {
       role="presentation"
     >
       <List>
-        <Grow in timeout={800}>
+        <Grow in timeout={900}>
           <ListItem button onClick={() => handleNavChoice('', false)}>
             <ListItemIcon>
               <HomeIcon sx={{ color: "white" }} />
@@ -78,7 +76,7 @@ const ButtonAppBar = () => {
             <ListItemText primary="Welcome" />
           </ListItem>
         </Grow>
-        <Grow in timeout={1000}>
+        <Grow in timeout={1100}>
           <ListItem button onClick={() => handleNavChoice('episodes', true)}>
             <ListItemIcon>
               <LocalMoviesIcon sx={{ color: "white" }} />
@@ -86,7 +84,7 @@ const ButtonAppBar = () => {
             <ListItemText primary="Episodes" />
           </ListItem>
         </Grow>
-        <Grow in timeout={1300}>
+        <Grow in timeout={1400}>
           <ListItem button onClick={() => handleNavChoice('quotes', true)}>
             <ListItemIcon>
               <FormatQuoteIcon sx={{ color: "white" }} />
@@ -94,7 +92,7 @@ const ButtonAppBar = () => {
             <ListItemText primary="Quotes" />
           </ListItem>
         </Grow>
-        <Grow in timeout={1600}>
+        <Grow in timeout={1700}>
           <ListItem button onClick={() => handleNavChoice('characters', true)}>
             <ListItemIcon>
               <GroupIcon sx={{ color: "white" }} />
@@ -102,7 +100,7 @@ const ButtonAppBar = () => {
             <ListItemText primary="Characters" />
           </ListItem>
         </Grow>
-        <Grow in timeout={1900}>
+        <Grow in timeout={2000}>
           <ListItem button onClick={() => handleNavChoice('deaths', true)}>
             <ListItemIcon>
               <HealthAndSafetyIcon sx={{ color: "white" }} />
@@ -140,8 +138,8 @@ const ButtonAppBar = () => {
             <Typography variant="h6" compontent="div" sx={{ flexGrow: 1 }}>
               <NavLink
                 to="/"
-                style={{ textDecoration: "none", color: "black" }}>
-                  Breaking Bad
+                style={removeDefaultStyle}>
+                Breaking Bad
               </NavLink>
             </Typography>
 
@@ -151,7 +149,7 @@ const ButtonAppBar = () => {
                 <Button color="inherit">
                   <NavLink
                     to="/signup"
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={removeDefaultStyle}
                   >
                     <Typography variant="button"
                       sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
@@ -164,7 +162,7 @@ const ButtonAppBar = () => {
                 <Button color="inherit">
                   <NavLink
                     to="/login"
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={removeDefaultStyle}
                   >
                     <Typography variant="button"
                       sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
@@ -180,7 +178,7 @@ const ButtonAppBar = () => {
               <Button color="inherit">
                 <NavLink
                   to="/login"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={removeDefaultStyle}
                 >
                   Login
                 </NavLink>
@@ -190,14 +188,14 @@ const ButtonAppBar = () => {
             {identity.user && (
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 <Avatar sx={{
-                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
-                  animation: `${colorChange} 15s ease-in-out infinite`, animationDelay: "3s", fontSize: 18,
+                  backgroundColor: "black", border: "1px solid black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
+                  animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18,
                 }}>
                   {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
                 <Button color="inherit" onClick={identity.logout}>
                   <NavLink
                     to="/"
-                    style={{ textDecoration: "none", color: "black" }}
+                    style={removeDefaultStyle}
                   >
                     Logout
                   </NavLink>
