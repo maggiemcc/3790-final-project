@@ -106,7 +106,7 @@ const CharacterContainer = () => {
             </Box>
 
             {showMore && (
-              <Box>
+              <Box sx={{minHeight: "100px"}}>
                 {favorites.map((characterId) => {
                   return (
                     <Box

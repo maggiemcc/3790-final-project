@@ -20,7 +20,7 @@ const CharacterCard = (props) => {
 
   let imageStyle = {
     display: "center",
-    width:  "150px",
+    width: "150px",
     height: "200px",
     objectFit: "cover",
     borderWidth: 5,
@@ -53,7 +53,9 @@ const CharacterCard = (props) => {
 
   React.useEffect(() => {
     favorites.includes(character.name) ? setFavorite(true) : setFavorite(false);
-  }, [character.name, favorites]);
+  },
+    [character.name, favorites]
+  );
 
   return (
     <Card
@@ -78,7 +80,7 @@ const CharacterCard = (props) => {
         }}
       >
         <Typography
-          sx={{ fontWeight: "bold", margin: "2% 0",}}
+          sx={{ fontWeight: "bold", margin: "2% 0", }}
           color="primary.contrastText"
           typography="h6"
         >
@@ -108,7 +110,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 400s ease infinite` : "#fff"}}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 400s ease infinite` : "#fff" }}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />

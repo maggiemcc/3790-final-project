@@ -77,7 +77,7 @@ const CharacterDetail = () => {
             <List>
               <ListItem sx={{margin: 0,}}>
                   <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
-                <Typography variant="body1" sx={{fontSize: "16px"}}>
+                <Typography variant="body1" sx={{fontSize: "16px"}} key={character.characterId}>
                   <b>Born:</b> {character.birthday}
                 </Typography>
               </ListItem>
@@ -109,10 +109,10 @@ const CharacterDetail = () => {
                   <b>Occupation(s):</b>
                 </Typography>
               </ListItem>
-              <List sx={{ paddingLeft: "5%", paddingTop: 0, margin: 0 }}>
+              {/* <List sx={{ paddingLeft: "5%", paddingTop: 0, margin: 0 }}> */}
                     {character.occupation.map((occupation, index) => {
                       return (
-                        <ListItem>
+                        <ListItem sx={{ paddingLeft: "40px", paddingTop: 0, margin: 0 }}>
                           <ArrowForwardIosIcon sx={{fontSize: 16,}}/>
                         <Typography
                           variant="body1"
@@ -124,7 +124,7 @@ const CharacterDetail = () => {
                         </ListItem>
                       );
                     })}
-                  </List>
+                  {/* </List> */}
             </List>
           </Box>
         </Box>
