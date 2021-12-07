@@ -2,12 +2,9 @@ import * as React from "react";
 import {
   Box,
   Modal,
-  IconButton,
-  CardActions,
   Typography,
   Slide
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CharacterCard from "../components/CharacterCard";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
@@ -27,52 +24,14 @@ const modalStyle = {
   p: 4,
 };
 
-const favoriteStyle = {
-  marginTop: "2%",
-  padding: "2% 0px 2% 0px",
-  color: "white",
-  borderTop: "3px solid white",
-  borderBottom: "3px solid white",
-  width: "100%",
-};
-
-const bull = (
-  <Box
-    component="span"
-    sx={{
-      display: "inline-block",
-      mx: "2px",
-      transform: "scale(0.8)",
-    }}
-  >
-    •
-  </Box>
-);
 
 const CharacterContainer = () => {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  // const [favorites, setFavorites] = React.useState([]);
-  // const breakingBadData = useBreakingBadContext();
-  const { characters, favorites } = useBreakingBadContext();
+  const { characters } = useBreakingBadContext();
   const identity = useIdentityContext();
 
-
-  // const addToFavorites = (character) => {
-  //   if (!favorites.includes(character.name)) {
-  //     setFavorites((prevState) => [...prevState, character.name]);
-  //   } else {
-  //     setFavorites(() => {
-  //       return favorites.filter((item) => item !== character.name);
-  //     });
-  //   }
-  // };
-
-  const [showMore, setShowMore] = React.useState(false);
-  const toggleShowMoreHandler = () => {
-    setShowMore((prevShowMore) => !prevShowMore);
-  };
   return (
     <Box id="containerLayout" sx={{ padding: "2% 0", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Characters</Typography>
@@ -83,50 +42,6 @@ const CharacterContainer = () => {
 
       {identity.user && (
         <Box sx={{ margin: 0, padding: 0 }}>
-          <Box sx={favoriteStyle}>
-            <Box>
-              <Typography variant="h6" sx={{
-                margin: "0 0 0 0",
-                padding: 0,
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-              }}>
-                Favorite Characters
-
-                <CardActions style={{ padding: 0, margin: 0 }}>
-                  <IconButton
-                    sx={{ padding: 0, margin: 0, color: "white" }}
-                    onClick={toggleShowMoreHandler}
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-              </Typography>
-            </Box>
-
-            {showMore && (
-              <Box sx={{minHeight: "100px"}}>
-                {favorites.map((characterId) => {
-                  return (
-                    <Box
-                      key={characterId}
-                      sx={{ padding: "0 5%" }}
-                    >
-                      <Typography variant="body1" sx={{
-                        margin: "1% 0",
-                        fontFamily: "courier",
-                        fontWeight: "bold",
-                        lineHeight: "normal",
-                      }}>
-                        {bull}{characterId}
-                      </Typography>
-                    </Box>
-                  );
-                })}
-              </Box>
-            )}
-          </Box>
 
           <Box
             sx={{
@@ -140,8 +55,8 @@ const CharacterContainer = () => {
             }}
           >
             <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
-            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkGreen", padding: "0 2%" }}>Alive</Typography>
-            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
+            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "green", padding: "0 2%" }}>Alive</Typography>
+            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "rgb(199, 4, 4)", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
           </Box>
 
           <Slide in direction="right" timeout={1200}>
@@ -152,7 +67,6 @@ const CharacterContainer = () => {
                 return (
                   <CharacterCard
                     key={character.char_id}
-                    // addToFavoritesFunction={addToFavorites}
                     modalFunction={handleOpen}
                     character={{ ...character }}
                     sx={{ margin: "auto" }}

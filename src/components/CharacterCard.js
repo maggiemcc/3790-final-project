@@ -13,10 +13,10 @@ import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 
 const CharacterCard = (props) => {
   const { character } = props;
-  const { favorites, updateFavorites } = useBreakingBadContext();
-  const [favorite, setFavorite] = React.useState(false);
+  const { favoriteCharacters, updateFavoriteCharacters } = useBreakingBadContext();
+  const [favorite, setFavoriteCharacters] = React.useState(false);
 
-  const statusColor = character.status === "Alive" ? "darkgreen" : "darkred";
+  const statusColor = character.status === "Alive" ? "green" : "rgb(199, 4, 4)";
 
   let imageStyle = {
     display: "center",
@@ -37,9 +37,7 @@ const CharacterCard = (props) => {
 
 
   const handleFavoriteClick = () => {
-    setFavorite(!favorite);
-    // props.addToFavoritesFunction(character);
-    updateFavorites(character);
+    updateFavoriteCharacters(character);
   };
 
   const heartColor = keyframes`
@@ -52,9 +50,9 @@ const CharacterCard = (props) => {
   `;
 
   React.useEffect(() => {
-    favorites.includes(character.name) ? setFavorite(true) : setFavorite(false);
+    favoriteCharacters.includes(character.name) ? setFavoriteCharacters(true) : setFavoriteCharacters(false);
   },
-    [character.name, favorites]
+    [character.name, favoriteCharacters]
   );
 
   return (
@@ -69,9 +67,9 @@ const CharacterCard = (props) => {
         "&:hover": {
           borderRadius: 4,
           // backgroundColor: `${statusColor}`,
-          border: `10px solid ${statusColor}`,
+          border: `5px solid ${statusColor}`,
           padding: 0,
-          width: 250,
+          width: 290,
         },
       }}
     >
@@ -113,7 +111,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 250s ease infinite` : "#fff" }}
+                    sx={{p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 200s ease infinite` : "#fff" }}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />

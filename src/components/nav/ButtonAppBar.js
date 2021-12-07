@@ -23,6 +23,7 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 import { keyframes } from '@emotion/react';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 
 const ButtonAppBar = () => {
@@ -109,14 +110,14 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
 
-      {/* <Grow in timeout={2300}>
-          <ListItem button onClick={() => handleNavChoice('deaths', true)}>
+      <Grow in timeout={2300}>
+          <ListItem button onClick={() => handleNavChoice('favorites', true)}>
             <ListItemIcon>
-              <HealthAndSafetyIcon sx={{ color: "white" }} />
+              <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Favorites" />
           </ListItem>
-        </Grow> */}
+        </Grow>
       </List>
     </Box>
   );
@@ -196,11 +197,12 @@ const ButtonAppBar = () => {
 
             {identity.user && (
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-                <Avatar sx={{
-                  backgroundColor: "black", border: "2px solid black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
+                <Avatar variant="rounded" sx={{
+                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
                   animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18, fontWeight: "500"
                 }}>
-                  {identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
+                  {identity.user?.user_metadata?.full_name.slice(0, 1)}
+                  </Avatar>
                 <Button color="inherit" onClick={identity.logout}>
                   <NavLink
                     to="/"

@@ -6,7 +6,8 @@ const BreakingBadContext = React.createContext({
   quotes: [],
   episodes: [],
   deaths: [],
-  favorites: [],
+  favoriteCharacters: [],
+  favoriteQuotes: [],
 })
 
 export const BreakingBadContextProvider = (props) => {
@@ -14,15 +15,26 @@ export const BreakingBadContextProvider = (props) => {
   const [quotes, setQuotes] = React.useState([]);
   const [episodes, setEpisodes] = React.useState([]);
   const [deaths, setDeaths] = React.useState([]);
-  const [favorites, setFavorites] = React.useState([]);
+  const [favoriteCharacters, setFavoriteCharacters] = React.useState([]);
+  const [favoriteQuotes, setFavoriteQuotes] = React.useState([]);
 
 
-  const updateFavorites = (character) => {
-    if (!favorites.includes(character.name)) {
-      setFavorites((prevState) => [...prevState, character.name]);
+  const updateFavoriteCharacters = (character) => {
+    if (!favoriteCharacters.includes(character.name)) {
+      setFavoriteCharacters((prevState) => [...prevState, character.name]);
     } else {
-      setFavorites(() => {
-        return favorites.filter((item) => item !== character.name);
+      setFavoriteCharacters(() => {
+        return favoriteCharacters.filter((item) => item !== character.name);
+      });
+    }
+  };
+
+  const updateFavoriteQuotes = (quote) => {
+    if (!favoriteQuotes.includes(quote.quote)) {
+      setFavoriteQuotes((prevState) => [...prevState, quote.quote]);
+    } else {
+      setFavoriteQuotes(() => {
+        return favoriteQuotes.filter((item) => item !== quote.quote);
       });
     }
   };
@@ -65,8 +77,10 @@ export const BreakingBadContextProvider = (props) => {
       quotes,
       episodes,
       deaths,
-      favorites,
-      updateFavorites,
+      favoriteCharacters,
+      updateFavoriteCharacters,
+      favoriteQuotes,
+      updateFavoriteQuotes
     }}>
       {props.children}
     </BreakingBadContext.Provider>

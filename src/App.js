@@ -5,6 +5,7 @@ import { BreakingBadContextProvider } from "./contexts/BreakingBadContext";
 import ButtonAppBar from "./components/nav/ButtonAppBar";
 import { Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
+import Favorites from "./pages/Favorites";
 import LoginForm from "./components/login/LoginForm";
 import NotFound from "./pages/NotFound";
 import CharacterDetail from "./pages/CharacterDetail";
@@ -90,6 +91,9 @@ const App = () => {
 
                   <Route path="/signup">
                     <SignupForm />
+                  </Route>
+                  <Route path="/favorites">
+                    <Favorites />
                   </Route>
 
                   <Route path="*">
