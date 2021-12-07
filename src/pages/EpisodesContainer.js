@@ -21,7 +21,7 @@ const EpisodesContainer = () => {
 
       {identity.user && (
         <Fade in timeout={1200}>
-        <TableContainer sx={{ marginTop: "50px", border: "2px solid white", minHeight: "100px", minWidth: "100px"}}>
+        <TableContainer sx={{ marginTop: "50px", border: "2px solid white", minHeight: "100px", minWidth: "100px", borderRadius: "5px"}}>
           <Table>
             <TableHead>
               <TableRow sx={{margin: "auto", backgroundColor: "white",}}>

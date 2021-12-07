@@ -52,7 +52,7 @@ const Favorites = () => {
                         {showChars && (
                             <Grow in timeout={1000}>
 
-                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "750px", backgroundColor: "white", color: "black" }}>
+                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "400px", backgroundColor: "white", color: "black" }}>
                                     {favoriteCharacters.map((favoriteChar) => {
                                         return (
                                             <Box
@@ -95,7 +95,7 @@ const Favorites = () => {
                         {showQuotes && (
                             <Grow in timeout={1000}>
 
-                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "750px", backgroundColor: "white", color: "black" }}>
+                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "800px", backgroundColor: "white", color: "black" }}>
                                     {favoriteQuotes.map((favoriteQuote) => {
                                         return (
                                             <Box

@@ -114,7 +114,7 @@ const ButtonAppBar = () => {
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
-            <ListItemText primary="Favorites" />
+            <ListItemText primary="My Favorites" />
           </ListItem>
         </Grow>
       </List>
