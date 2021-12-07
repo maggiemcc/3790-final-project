@@ -36,13 +36,19 @@ const CharacterCard = (props) => {
     updateFavoriteCharacters(character);
   };
 
+  // const heartColor = keyframes`
+  // 0%, 100% {color: #F00;}
+  // 10%, 90% {color: pink;}
+  // 20%, 80% {color: purple;}
+  // 30%, 70% {color: blue;}
+  // 40%, 60% {color: green;}
+  // 50% {color: yellow;}
+  // `;
+
   const heartColor = keyframes`
-  0%, 100% {color: #F00;}
-  10%, 90% {color: pink;}
-  20%, 80% {color: purple;}
-  30%, 70% {color: blue;}
-  40%, 60% {color: green;}
-  50% {color: yellow;}
+  0%, 100% {color: red;}
+  25%, 75% {color: pink;}
+  50% {color: purple;}
   `;
 
   React.useEffect(() => {
@@ -109,7 +115,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 200s ease infinite` : "#fff" }}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />
