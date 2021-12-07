@@ -2,7 +2,7 @@ import * as React from "react";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import EpisodesCard from "../components/EpisodesCard";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
-import { Box, Typography, Slide, Table, TableContainer, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
+import { Box, Typography, Fade, Table, TableContainer, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 
 
 
@@ -20,7 +20,7 @@ const EpisodesContainer = () => {
       )}
 
       {identity.user && (
-        <Slide in direction="right" timeout={1200}>
+        <Fade in timeout={1200}>
         <TableContainer sx={{ marginTop: "50px", border: "2px solid white", minHeight: "100px", minWidth: "100px"}}>
           <Table>
             <TableHead>
@@ -44,7 +44,7 @@ const EpisodesContainer = () => {
 
           </Table>
         </TableContainer>
-         </Slide>
+         </Fade>
       )}
     </Box>
   );

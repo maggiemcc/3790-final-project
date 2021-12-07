@@ -14,17 +14,16 @@ import {
   Avatar,
   Grow,
 } from "@mui/material";
-import { NavLink, useHistory } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import GroupIcon from '@mui/icons-material/Group';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import { NavLink, useHistory } from "react-router-dom";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 import { keyframes } from '@emotion/react';
-import FavoriteIcon from "@mui/icons-material/Favorite";
-
 
 const ButtonAppBar = () => {
   const removeDefaultStyle = {
@@ -104,7 +103,7 @@ const ButtonAppBar = () => {
         <Grow in timeout={2000}>
           <ListItem button onClick={() => handleNavChoice('deaths', true)}>
             <ListItemIcon>
-              <HealthAndSafetyIcon sx={{ color: "white" }} />
+              <LocalHospitalIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Character Deaths" />
           </ListItem>

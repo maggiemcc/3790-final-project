@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grow } from "@mui/material";
 
 const style = {
   fontWeight: "300",
@@ -14,6 +14,8 @@ const DeathsCard = (props) => {
   const { death } = props;
 
   return (
+    <Grow in timeout={3000}>
+
     <Box
       sx={{
         padding: "2%",
@@ -25,10 +27,10 @@ const DeathsCard = (props) => {
         fontWeight: "300",
         border: "2px solid white",
         "&:hover": {
-          backgroundColor: "rgb(77, 0, 0)",
-          color: "white",
+          // backgroundColor: "rgb(77, 0, 0)",
+          backgroundColor: "white",
+          color: "black",
           borderRadius: "5px",
-          border: "none",
         },
         width: "100%",
         maxWidth: "500px",
@@ -99,6 +101,7 @@ const DeathsCard = (props) => {
         </Box>
       </Box>
     </Box>
+    </Grow>
   );
 };
 

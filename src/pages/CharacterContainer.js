@@ -3,7 +3,7 @@ import {
   Box,
   Modal,
   Typography,
-  Slide
+  Fade
 } from "@mui/material";
 import CharacterCard from "../components/CharacterCard";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
@@ -41,25 +41,27 @@ const CharacterContainer = () => {
       )}
 
       {identity.user && (
-        <Box sx={{ margin: 0, padding: 0 }}>
+        <Fade in timeout={1200}>
 
-          <Box
-            sx={{
-              margin: 0,
-              color: "black",
-              backgroundColor: "white",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              padding: "2% 0"
-            }}
-          >
-            <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
-            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "green", padding: "0 2%" }}>Alive</Typography>
-            <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "rgb(199, 4, 4)", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
-          </Box>
+          <Box sx={{ margin: 0, padding: 0 }}>
 
-          <Slide in direction="right" timeout={1200}>
+            <Box
+              sx={{
+                margin: 0,
+                marginTop: "2%",
+                color: "black",
+                backgroundColor: "white",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                padding: "2% 0"
+              }}
+            >
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "green", padding: "0 2%" }}>Alive</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "rgb(199, 4, 4)", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
+            </Box>
+
             <Box
               sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
             >
@@ -74,17 +76,20 @@ const CharacterContainer = () => {
                 );
               })}
             </Box>
-          </Slide>
 
-          <Box>
-            <Modal open={open} onClose={handleClose}>
-              <Box sx={modalStyle}>
-              </Box>
-            </Modal>
+            <Box>
+              <Modal open={open} onClose={handleClose}>
+                <Box sx={modalStyle}>
+                </Box>
+              </Modal>
+            </Box>
           </Box>
-        </Box>
+        </Fade>
+
       )}
+
     </Box>
+
   );
 };
 

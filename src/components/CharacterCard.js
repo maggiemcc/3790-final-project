@@ -1,15 +1,11 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
+import { Card, CardContent, CardActions, Box, Typography, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import { useHistory } from "react-router-dom";
 import { keyframes } from '@emotion/react';
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
+import LazyLoad from 'react-lazyload';
 
 const CharacterCard = (props) => {
   const { character } = props;
@@ -90,7 +86,9 @@ const CharacterCard = (props) => {
         <Box>
           <Box>
             <Box sx={{ margin: "auto" }}>
-              <img style={imageStyle} src={character.img} alt="characterpicture" />
+              <LazyLoad>
+                <img style={imageStyle} src={`${character.img}`} alt="characterpicture" />
+              </LazyLoad>
 
               <Box
                 sx={{
@@ -111,7 +109,7 @@ const CharacterCard = (props) => {
                   }}
                 >
                   <IconButton
-                    sx={{p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 200s ease infinite` : "#fff" }}
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 200s ease infinite` : "#fff" }}
                     onClick={handleFavoriteClick}
                   >
                     <FavoriteIcon />

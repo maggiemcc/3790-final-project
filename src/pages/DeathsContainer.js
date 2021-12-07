@@ -2,7 +2,7 @@ import * as React from "react";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
 import DeathsCard from "../components/DeathsCard";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
-import { Box, Typography, Slide } from "@mui/material";
+import { Box, Typography, Fade } from "@mui/material";
 
 const DeathsContainer = () => {
   const breakingBadData = useBreakingBadContext();
@@ -18,7 +18,7 @@ const DeathsContainer = () => {
 
 
       {identity.user && (
-    <Slide in direction="right" timeout={1200}>
+    <Fade in timeout={1200}>
 
         <Box
           style={{
@@ -37,7 +37,7 @@ const DeathsContainer = () => {
             );
           })}
         </Box>
-        </Slide>
+        </Fade>
       )}
     </Box>
   );

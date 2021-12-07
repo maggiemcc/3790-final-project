@@ -1,10 +1,12 @@
 import * as React from "react";
-import {Typography, TableRow, TableCell} from "@mui/material";
+import {Typography, TableRow, TableCell, Fade} from "@mui/material";
 
 const EpisodesCard = (props) => {
   const { episode } = props;
 
   return (
+    <Fade in timeout={2000}>
+
       <TableRow sx={{
         textAlign: "left",
         "&:hover": {
@@ -35,6 +37,7 @@ const EpisodesCard = (props) => {
           })}
         </TableCell>
       </TableRow>
+      </Fade>
   );
 };
 
