@@ -14,3 +14,6 @@
 ## Netlify:
 
 - [Netlify Final Project](https://dgm-3790-final-react-app.netlify.app/)
+
+## API:
+- Created using Breaking Bad Api: [API](https://breakingbadapi.com/documentation)
