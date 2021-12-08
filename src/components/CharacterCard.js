@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, CardContent, CardActions, Box, Typography, IconButton } from "@mui/material";
+import { CardActions, Box, Typography, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import { useHistory } from "react-router-dom";
@@ -36,19 +36,10 @@ const CharacterCard = (props) => {
     updateFavoriteCharacters(character);
   };
 
-  // const heartColor = keyframes`
-  // 0%, 100% {color: #F00;}
-  // 10%, 90% {color: pink;}
-  // 20%, 80% {color: purple;}
-  // 30%, 70% {color: blue;}
-  // 40%, 60% {color: green;}
-  // 50% {color: yellow;}
-  // `;
-
   const heartColor = keyframes`
   0%, 100% {color: red;}
   25%, 75% {color: pink;}
-  50% {color: purple;}
+  50% {color: #DA70D6;}
   `;
 
   React.useEffect(() => {
@@ -58,7 +49,7 @@ const CharacterCard = (props) => {
   );
 
   return (
-    <Card
+    <Box
       sx={{
         width: "300px",
         display: "flex",
@@ -66,73 +57,70 @@ const CharacterCard = (props) => {
         m: 2,
         backgroundColor: "black",
         border: "2px solid white",
+        contain: "content",
         "&:hover": {
           borderRadius: 4,
-          backgroundColor: `${statusColor}`,
-          // border: `5px solid ${statusColor}`,
-          border: "2px solid transparent",
           padding: 0,
         },
       }}
     >
-      <CardContent
+      <Box
         sx={{
-          padding: "2% 1%",
-          margin: "auto",
+          padding: 0,
+          margin: 0,
           height: "100%",
+          width: "100%"
         }}
       >
+
         <Typography
-          sx={{ fontWeight: "bold", margin: "2% 0", }}
+          sx={{ fontWeight: "bold", marginBottom: "20px", padding: "5px 0", width: "100%", borderBottom: "2px solid white", }}
           color="primary.contrastText"
           typography="h6"
+          backgroundColor={statusColor}
         >
           {character.name} <br></br>
         </Typography>
-        <Box>
-          <Box>
-            <Box sx={{ margin: "auto" }}>
-              <LazyLoad>
-                <img style={imageStyle} src={`${character.img}`} alt="characterpicture" />
-              </LazyLoad>
+        
+        <LazyLoad>
+          <img style={imageStyle} src={`${character.img}`} alt="characterpicture" />
+        </LazyLoad>
 
-              <Box
-                sx={{
-                  display: "flex",
-                  margin: "0 auto",
-                  padding: 0,
-                  height: 40,
-                  lineHeight: 40,
-                  justifyContent: "center",
-                  textAlign: "center",
-                }}
-              >
-                <CardActions
-                  sx={{
-                    margin: "auto",
-                    textAlign: "center",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  <IconButton
-                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
-                    onClick={handleFavoriteClick}
-                  >
-                    <FavoriteIcon />
-                  </IconButton>
-                  <IconButton
-                    sx={{ p: 0, m: 0, color: "white" }}
-                    onClick={handleInfoClick}
-                  >
-                    <InfoIcon />
-                  </IconButton>
-                </CardActions>
-              </Box>
-            </Box>
-          </Box>
+        <Box
+          sx={{
+            display: "flex",
+            margin: "0 auto",
+            padding: 0,
+            height: 40,
+            lineHeight: 40,
+            justifyContent: "center",
+            textAlign: "center",
+            paddingBottom: "15px",
+          }}
+        >
+          <CardActions
+            sx={{
+              margin: "auto",
+              textAlign: "center",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <IconButton
+              sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
+              onClick={handleFavoriteClick}
+            >
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton
+              sx={{ p: 0, m: 0, color: "white" }}
+              onClick={handleInfoClick}
+            >
+              <InfoIcon />
+            </IconButton>
+          </CardActions>
         </Box>
-      </CardContent>
-    </Card>
+      </Box>
+    </Box>
   );
 };
 

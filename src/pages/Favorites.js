@@ -44,7 +44,7 @@ const Favorites = () => {
                                 sx={{ padding: 0, margin: 0, color: "white" }}
                                 onClick={toggleShowCharsHandler}
                             >
-                                <Typography variant="h4" fontWeight="bold">Favorite Characters ({favoriteCharacters.length})</Typography>
+                                <Typography variant="h5" fontWeight="bold">Favorite Characters ({favoriteCharacters.length})</Typography>
                                 <ExpandMoreIcon />
                             </IconButton>
                         </CardActions>
@@ -87,7 +87,7 @@ const Favorites = () => {
                                 sx={{ padding: 0, margin: 0, color: "white" }}
                                 onClick={toggleShowQuotesHandler}
                             >
-                                <Typography variant="h4" fontWeight="bold">Favorite Quotes ({favoriteQuotes.length})</Typography>
+                                <Typography variant="h5" fontWeight="bold">Favorite Quotes ({favoriteQuotes.length})</Typography>
                                 <ExpandMoreIcon />
                             </IconButton>
                         </CardActions>

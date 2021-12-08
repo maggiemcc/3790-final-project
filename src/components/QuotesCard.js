@@ -13,19 +13,10 @@ const QuotesCard = (props) => {
     updateFavoriteQuotes(quote);
   };
 
-  // const heartColor = keyframes`
-  // 0%, 100% {color: #F00;}
-  // 10%, 90% {color: pink;}
-  // 20%, 80% {color: purple;}
-  // 30%, 70% {color: blue;}
-  // 40%, 60% {color: green;}
-  // 50% {color: yellow;}
-  // `;
-
   const heartColor = keyframes`
   0%, 100% {color: red;}
   25%, 75% {color: pink;}
-  50% {color: purple;}
+  50% {color: #DA70D6;}
   `;
 
   React.useEffect(() => {
@@ -36,7 +27,6 @@ const QuotesCard = (props) => {
 
   return (
     <Grow in timeout={3000}>
-
     <Box
       sx={{
         m: 2,
@@ -48,7 +38,6 @@ const QuotesCard = (props) => {
         fontWeight: "300",
         width: "100%",
         maxWidth: "450px",
-        // height: "150px",
         height: "auto",
         "&:hover": {
           backgroundColor: "darkGreen",
@@ -60,11 +49,9 @@ const QuotesCard = (props) => {
         display: "block",
         margin: "auto",
         justifyContent: "center",
-        // border: "1px solid red",
         height: "100%",
       }}>
         <Typography variant="body1" sx={{
-          // border: "1px solid blue",
           height: "auto",
           minHeight: "60px",
           paddingBottom: "10px",
