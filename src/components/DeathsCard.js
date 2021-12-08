@@ -27,14 +27,12 @@ const DeathsCard = (props) => {
         fontWeight: "300",
         border: "2px solid white",
         "&:hover": {
-          // backgroundColor: "rgb(77, 0, 0)",
           backgroundColor: "white",
           color: "black",
           borderRadius: "5px",
         },
         width: "100%",
         maxWidth: "500px",
-        minWidth: "250px",
       }}
     >
       <Box

@@ -58,8 +58,8 @@ const CharacterContainer = () => {
               }}
             >
               <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
-              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "green", padding: "0 2%" }}>Alive</Typography>
-              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "rgb(199, 4, 4)", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkGreen", padding: "0 2%" }}>Alive</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
             </Box>
 
             <Box

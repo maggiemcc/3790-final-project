@@ -107,8 +107,8 @@ const Favorites = () => {
                                                     p: 0,
                                                     fontFamily: "courier",
                                                     fontWeight: "300",
-                                                    lineHeight: "22px",
-                                                    fontSize: 18,
+                                                    lineHeight: "normal",
+                                                    fontSize: "20px",
                                                     display: "inline",
                                                     color: "black"
                                                 }}>

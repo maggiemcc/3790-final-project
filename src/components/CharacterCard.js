@@ -12,7 +12,7 @@ const CharacterCard = (props) => {
   const { favoriteCharacters, updateFavoriteCharacters } = useBreakingBadContext();
   const [favorite, setFavoriteCharacters] = React.useState(false);
 
-  const statusColor = character.status === "Alive" ? "green" : "rgb(199, 4, 4)";
+  const statusColor = character.status === "Alive" ? "darkGreen" : "darkRed";
 
   let imageStyle = {
     display: "center",
@@ -68,10 +68,10 @@ const CharacterCard = (props) => {
         border: "2px solid white",
         "&:hover": {
           borderRadius: 4,
-          // backgroundColor: `${statusColor}`,
-          border: `5px solid ${statusColor}`,
+          backgroundColor: `${statusColor}`,
+          // border: `5px solid ${statusColor}`,
+          border: "2px solid transparent",
           padding: 0,
-          width: 290,
         },
       }}
     >
