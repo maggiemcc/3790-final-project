@@ -16,22 +16,22 @@ const EpisodesCard = (props) => {
         },
       }}
       >
-        <TableCell sx={{color: "white", maxWidth: "150px"}}>{episode.title}</TableCell>
-        <TableCell sx={{color: "white", maxWidth: "80px",}}>S{episode.season} E{episode.episode}</TableCell>
-        <TableCell sx={{color: "white",}}>{episode.air_date}</TableCell>
-        <TableCell sx={{color: "white", maxWidth: "150px"}}>
+        <TableCell sx={{color: "white", width: "auto", maxWidth: "100px"}}>{episode.title}</TableCell>
+        <TableCell sx={{color: "white", width: "auto", maxWidth: "100px",}}>S{episode.season} E{episode.episode}</TableCell>
+        <TableCell sx={{color: "white", width: "auto", maxWidth: "100px",}}>{episode.air_date}</TableCell>
+        <TableCell sx={{color: "white", width: "auto", maxWidth: "170px"}}>
           {episode.characters.map((character, index) => {
             return (
               <Typography
                 key={character}
                 sx={{
                   lineHeight: "normal",
-                  // display: "inline-block",
-                  display: "block",
+                  display: "inline-block",
+                  marginRight: "5px",
                 }}
               >
-                {/* {(index ? ", " : " ") + character} */}
-                {character}
+                {/* {(index ? ", ": " ") + character} */}
+                {character + ","}
               </Typography>
             );
           })}

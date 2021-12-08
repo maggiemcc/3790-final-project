@@ -53,23 +53,23 @@ const Favorites = () => {
                             <Grow in timeout={1000}>
 
                                 <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "400px", backgroundColor: "white", color: "black" }}>
-                                    {favoriteCharacters.map((favoriteChar) => {
+                                    {favoriteCharacters.map((favoriteChar, index) => {
                                         return (
                                             <Box
                                                 key={favoriteChar}
-                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", marginBottom: "12px" }}
+                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", }}
                                             >
-                                                {/* <ArrowForwardIosIcon sx={{ fontSize: "20px", lineHeight: "normal", m: 0, p: 0, marginRight: "5px", display: "inline", }} /> */}
                                                 <Typography variant="body1" sx={{
-                                                    m: 0, p: 0,
+                                                    m: "20px 0",
+                                                    p: 0,
                                                     fontFamily: "courier",
                                                     fontWeight: "300",
                                                     lineHeight: "normal",
                                                     fontSize: "20px",
-                                                    display: "inline",
-                                                    color: "black",
+                                                    display: "block",
+                                                    color: "black"
                                                 }}>
-                                                    {favoriteChar}
+                                                    {index + 1}{(". " + favoriteChar)}
                                                 </Typography>
                                             </Box>
                                         );
@@ -96,23 +96,23 @@ const Favorites = () => {
                             <Grow in timeout={1000}>
 
                                 <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "800px", backgroundColor: "white", color: "black" }}>
-                                    {favoriteQuotes.map((favoriteQuote) => {
+                                    {favoriteQuotes.map((favoriteQuote, index) => {
                                         return (
                                             <Box
                                                 key={favoriteQuote}
-                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", marginBottom: "25px", }}
+                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", }}
                                             >
                                                 <Typography variant="body1" sx={{
-                                                    m: 0,
+                                                    m: "30px 0",
                                                     p: 0,
                                                     fontFamily: "courier",
                                                     fontWeight: "300",
                                                     lineHeight: "normal",
                                                     fontSize: "20px",
-                                                    display: "inline",
+                                                    display: "block",
                                                     color: "black"
                                                 }}>
-                                                    "{favoriteQuote}"
+                                                    {index + 1 + ". "}"{favoriteQuote}"
                                                 </Typography>
                                             </Box>
                                         );

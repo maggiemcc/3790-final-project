@@ -21,14 +21,14 @@ const EpisodesContainer = () => {
 
       {identity.user && (
         <Fade in timeout={1200}>
-        <TableContainer sx={{ border: "2px solid white", minHeight: "100px", minWidth: "100px", maxWidth: "900px", margin: "auto", marginTop: "50px", borderRadius: "5px"}}>
+        <TableContainer sx={{ border: "2px solid white", minHeight: "100px", minWidth: "100px", maxWidth: "920px", margin: "auto", marginTop: "50px", borderRadius: "5px"}}>
           <Table>
             <TableHead>
-              <TableRow sx={{margin: "auto", backgroundColor: "white",}}>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "150px"}}>Name</TableCell>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "80px"}}>Episode</TableCell>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold"}}>Air Date</TableCell>
-                <TableCell sx={{flexGrow: 1, fontWeight: "bold", maxWidth: "150px"}}>Character Appearances</TableCell>
+              <TableRow sx={{margin: "auto", backgroundColor: "white", lineHeight: "normal"}}>
+                <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Name</TableCell>
+                <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Episode</TableCell>
+                <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Air Date</TableCell>
+                <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "150px", lineHeight: "normal"}}>Character Appearances</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

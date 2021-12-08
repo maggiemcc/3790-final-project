@@ -24,8 +24,11 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import { NavLink, useHistory } from "react-router-dom";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 import { keyframes } from '@emotion/react';
+import { useBreakingBadContext } from "../../contexts/BreakingBadContext";
 
 const ButtonAppBar = () => {
+  const { favoriteCharacters, favoriteQuotes } = useBreakingBadContext();
+
   const removeDefaultStyle = {
     textDecoration: "none",
     color: "black"
@@ -60,7 +63,7 @@ const ButtonAppBar = () => {
   const drawerItemList = () => (
     <Box
       sx={{
-        width: 250,
+        width: 260,
         backgroundColor: "green",
         color: "white",
         height: "100%",
@@ -114,7 +117,7 @@ const ButtonAppBar = () => {
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
-            <ListItemText primary="My Favorites" />
+            <ListItemText primary={"My Favorites (" + (favoriteCharacters?.length + favoriteQuotes?.length) + ")"} />
           </ListItem>
         </Grow>
       </List>

@@ -80,9 +80,9 @@ const CharacterDetail = () => {
               >
                 <List>
                   <ListItem>
-                    <Typography variant="h6">Information:</Typography>
+                    <Typography variant="h6" sx={{textAlign: "center", margin: "0 auto"}}>Information:</Typography>
                   </ListItem>
-
+                 <hr style={{height: "2px", backgroundColor: "black", border: "none", margin: "0"}} />
                   <ListItem>
                     <ArrowForwardIosIcon sx={{ fontSize: 16, }} />
                     <Typography variant="body1" sx={{ fontSize: "16px" }}>

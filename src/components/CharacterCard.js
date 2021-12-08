@@ -59,8 +59,10 @@ const CharacterCard = (props) => {
         border: "2px solid white",
         contain: "content",
         "&:hover": {
-          borderRadius: 4,
+          // borderRadius: 4,
+          borderRadius: "0px 0px 10px 10px",
           padding: 0,
+          bgcolor: "rgb(34, 34, 34)",
         },
       }}
     >
@@ -98,21 +100,15 @@ const CharacterCard = (props) => {
             paddingBottom: "15px",
           }}
         >
-          <CardActions
-            sx={{
-              margin: "auto",
-              textAlign: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
+          <CardActions>
             <IconButton
-              sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
+              sx={{color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
             </IconButton>
             <IconButton
-              sx={{ p: 0, m: 0, color: "white" }}
+              sx={{color: "white" }}
               onClick={handleInfoClick}
             >
               <InfoIcon />
