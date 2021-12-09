@@ -113,7 +113,7 @@ const ButtonAppBar = () => {
         </Grow>
 
       <Grow in timeout={2300}>
-          <ListItem button onClick={() => handleNavChoice('favorites', true)}>
+          <ListItem button onClick={() => handleNavChoice('favorites', false)}>
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
