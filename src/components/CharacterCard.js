@@ -48,6 +48,17 @@ const CharacterCard = (props) => {
     [character.name, favoriteCharacters]
   );
 
+
+  // const menuWobble = keyframes`
+  // 0%, 100% {
+  //   opacity: 1;
+  //   color: red;
+  // }
+  // 50% {
+  //   opacity: 0;
+  // }
+  // `;
+
   return (
     <Box
       sx={{
@@ -60,9 +71,9 @@ const CharacterCard = (props) => {
         contain: "content",
         "&:hover": {
           // borderRadius: 4,
-          borderRadius: "0px 0px 10px 10px",
+          borderRadius: "0px 0px 20px 20px",
           padding: 0,
-          bgcolor: "rgb(34, 34, 34)",
+          // bgcolor: "rgb(34, 34, 34)",
         },
       }}
     >
@@ -83,7 +94,7 @@ const CharacterCard = (props) => {
         >
           {character.name} <br></br>
         </Typography>
-        
+
         <LazyLoad>
           <img style={imageStyle} src={`${character.img}`} alt="characterpicture" />
         </LazyLoad>
@@ -102,13 +113,23 @@ const CharacterCard = (props) => {
         >
           <CardActions>
             <IconButton
-              sx={{color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
+              sx={{ padding: "2px", color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
             </IconButton>
             <IconButton
-              sx={{color: "white" }}
+              sx={{
+                padding: "1px",
+                margin: 0,
+                color: "white",
+                background: `linear-gradient(to left, transparent 50%, ${statusColor} 50%) right`,
+                backgroundSize: "200%",
+                transition: ".5s ease-out",
+                "&:hover": {
+                  backgroundPosition: "left",
+                }
+              }}
               onClick={handleInfoClick}
             >
               <InfoIcon />
@@ -116,7 +137,7 @@ const CharacterCard = (props) => {
           </CardActions>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 };
 

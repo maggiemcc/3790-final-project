@@ -53,6 +53,18 @@ const ButtonAppBar = () => {
   50% {background-color: #6B8E23;}
   `;
 
+
+  const menuWobble = keyframes`
+  0%, 100% {transform: rotate(0deg);}
+  50% {transform: rotate(3deg);}
+  `;
+
+  const navAnimation = {
+    '&:hover': {
+      animation: `${menuWobble} .6s ease-in-out 1`
+    }
+  }
+
   const identity = useIdentityContext();
 
 
@@ -79,7 +91,7 @@ const ButtonAppBar = () => {
     >
       <List>
         <Grow in timeout={900}>
-          <ListItem button onClick={() => handleNavChoice('', false)}>
+          <ListItem button onClick={() => handleNavChoice('', false)} sx={navAnimation}>
             <ListItemIcon>
               <HomeIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -87,7 +99,7 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
         <Grow in timeout={1100}>
-          <ListItem button onClick={() => handleNavChoice('episodes', true)}>
+          <ListItem button onClick={() => handleNavChoice('episodes', true)} sx={navAnimation}>
             <ListItemIcon>
               <LocalMoviesIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -95,7 +107,7 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
         <Grow in timeout={1400}>
-          <ListItem button onClick={() => handleNavChoice('quotes', true)}>
+          <ListItem button onClick={() => handleNavChoice('quotes', true)} sx={navAnimation}>
             <ListItemIcon>
               <FormatQuoteIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -103,7 +115,7 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
         <Grow in timeout={1700}>
-          <ListItem button onClick={() => handleNavChoice('characters', true)}>
+          <ListItem button onClick={() => handleNavChoice('characters', true)} sx={navAnimation}>
             <ListItemIcon>
               <GroupIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -111,7 +123,7 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
         <Grow in timeout={2000}>
-          <ListItem button onClick={() => handleNavChoice('deaths', true)}>
+          <ListItem button onClick={() => handleNavChoice('deaths', true)} sx={navAnimation}>
             <ListItemIcon>
               <LocalHospitalIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -120,7 +132,7 @@ const ButtonAppBar = () => {
         </Grow>
 
         <Grow in timeout={2300}>
-          <ListItem button onClick={() => handleNavChoice('favorites', false)}>
+          <ListItem button onClick={() => handleNavChoice('favorites', false)} sx={navAnimation}>
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -149,7 +161,13 @@ const ButtonAppBar = () => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              onClick={toggleDrawer}>
+              onClick={toggleDrawer}
+              sx={{ 
+                "&:hover": {
+                  animation: `${menuWobble} 5s ease-in-out infinite`,
+                } 
+              }}
+            >
               <MenuIcon />
             </IconButton>
 
