@@ -36,8 +36,15 @@ const ButtonAppBar = () => {
 
   const buttonColor = keyframes`
   0, 100% {color: black;}
-  25%, 75% {color: darkGreen;}
+  35%, 65% {color: darkGreen;}
   50% {color: green;}
+  `;
+
+  const buttonWobble = keyframes`
+  30%, 70% {transform: rotate(0deg);}
+  40% {transform: rotate(3deg);}
+  50% {transform: rotate(-3deg);}
+  60% {transform: rotate(3deg);}
   `;
 
   const colorChange = keyframes`
@@ -112,7 +119,7 @@ const ButtonAppBar = () => {
           </ListItem>
         </Grow>
 
-      <Grow in timeout={2300}>
+        <Grow in timeout={2300}>
           <ListItem button onClick={() => handleNavChoice('favorites', false)}>
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
@@ -157,27 +164,29 @@ const ButtonAppBar = () => {
 
 
             {!identity.user && !identity.provisionalUser && (
-              <Box>
-                <Button color="inherit">
+              <Box sx={{ animation: `${buttonWobble} 10s ease-in-out infinite`, }}>
+                <Button color="inherit"
+                >
                   <NavLink
                     to="/signup"
                     style={removeDefaultStyle}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
                     >
                       Signup
                     </Typography>
 
                   </NavLink>
                 </Button>
-                <Button color="inherit">
+                <Button color="inherit"
+                >
                   <NavLink
                     to="/login"
                     style={removeDefaultStyle}
                   >
                     <Typography variant="button"
-                      sx={{ animation: `${buttonColor} 5s ease-in-out infinite`, }}
+                      sx={{ animation: `${buttonColor} 10s ease-in-out infinite`, }}
                     >
                       Login
                     </Typography>
@@ -204,7 +213,7 @@ const ButtonAppBar = () => {
                   animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18, fontWeight: "500"
                 }}>
                   {identity.user?.user_metadata?.full_name.slice(0, 1)}
-                  </Avatar>
+                </Avatar>
                 <Button color="inherit" onClick={identity.logout}>
                   <NavLink
                     to="/"

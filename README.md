@@ -45,7 +45,7 @@
 
    1. [Fade Transition on Welcome Page](https://github.com/maggiemcc/3790-final-project/blob/master/src/pages/Welcome.js)
    2. [Heart Icon Animation on Quotes (& Character) Cards](https://github.com/maggiemcc/3790-final-project/blob/master/src/components/QuotesCard.js)
-   3. [Login/signup Buttons Color Animation in ButtonAppBar.js](https://github.com/maggiemcc/3790-final-project/blob/master/src/components/nav/ButtonAppBar.js)
+   3. [Login/signup Buttons Animation in ButtonAppBar.js](https://github.com/maggiemcc/3790-final-project/blob/master/src/components/nav/ButtonAppBar.js)
    4. [Grow Transistion on Character death cards;](https://github.com/maggiemcc/3790-final-project/blob/master/src/components/DeathsCard.js)
 
 - [Connect to a server using Netlify functions and display retrieved data including at least 5 item details (accessed by details route) in your UI.](https://github.com/maggiemcc/3790-final-project/blob/master/src/pages/CharacterDetail.js)
