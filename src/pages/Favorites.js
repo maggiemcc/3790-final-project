@@ -9,7 +9,7 @@ const style = {
     justifyContent: "center",
     width: "100%",
     color: "white",
-    padding: "2% 0",
+    p: "2% 0",
 };
 
 const Favorites = () => {
@@ -37,11 +37,11 @@ const Favorites = () => {
             {identity.user && (
                 <Fade in timeout={1300}>
 
-                    <Box sx={{ marginTop: "50px" }}>
+                    <Box sx={{ mt: "50px" }}>
 
-                        <CardActions style={{ fontSize: "30px", padding: 0, display: "block", }}>
+                        <CardActions style={{ fontSize: "30px", p: 0, display: "block" }}>
                             <IconButton
-                                sx={{ padding: 0, margin: 0, color: "white" }}
+                                sx={{ p: 0, m: 0, color: "white" }}
                                 onClick={toggleShowCharsHandler}
                             >
                                 <Typography variant="h5" fontWeight="bold">Favorite Characters ({favoriteCharacters.length})</Typography>
@@ -52,12 +52,12 @@ const Favorites = () => {
                         {showChars && (
                             <Grow in timeout={1000}>
 
-                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "400px", backgroundColor: "white", color: "black" }}>
+                                <Box sx={{ p: "20px 0", borderRadius: "6px", minHeight: "100px", m: "2% auto", width: "90%", maxWidth: "400px", bgcolor: "white", color: "black" }}>
                                     {favoriteCharacters.map((favoriteChar, index) => {
                                         return (
                                             <Box
                                                 key={favoriteChar}
-                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", }}
+                                                sx={{ p: "0 5%", color: "black", textAlign: "left" }}
                                             >
                                                 <Typography variant="body1" sx={{
                                                     m: "20px 0",
@@ -82,9 +82,9 @@ const Favorites = () => {
                         )}
 
 
-                        <CardActions style={{ fontSize: "30px", padding: 0, display: "block", marginTop: "50px" }}>
+                        <CardActions style={{ fontSize: "30px", p: 0, display: "block", mt: "50px" }}>
                             <IconButton
-                                sx={{ padding: 0, margin: 0, color: "white" }}
+                                sx={{ p: 0, m: 0, color: "white" }}
                                 onClick={toggleShowQuotesHandler}
                             >
                                 <Typography variant="h5" fontWeight="bold">Favorite Quotes ({favoriteQuotes.length})</Typography>
@@ -95,12 +95,12 @@ const Favorites = () => {
                         {showQuotes && (
                             <Grow in timeout={1000}>
 
-                                <Box sx={{ padding: "20px 0", borderRadius: "6px", minHeight: "100px", margin: "2% auto", width: "90%", maxWidth: "800px", backgroundColor: "white", color: "black" }}>
+                                <Box sx={{ p: "20px 0", borderRadius: "6px", minHeight: "100px", m: "2% auto", width: "90%", maxWidth: "800px", bgcolor: "white", color: "black" }}>
                                     {favoriteQuotes.map((favoriteQuote, index) => {
                                         return (
                                             <Box
                                                 key={favoriteQuote}
-                                                sx={{ padding: "0 5%", color: "black", textAlign: "left", }}
+                                                sx={{ p: "0 5%", color: "black", textAlign: "left" }}
                                             >
                                                 <Typography variant="body1" sx={{
                                                     m: "30px 0",

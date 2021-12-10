@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import {useIdentityContext} from "react-netlify-identity-gotrue";
 
 const modalStyle = {
-  margin: "5% auto",
+  m: "5% auto",
   width: "80%",
   maxWidth: "500px",
   bgcolor: "background.paper",
@@ -30,7 +30,6 @@ const SignupForm = () => {
           initialValues={{
             userName: "John Doe",
             email: "johndoe@example.com",
-            // password: "password",
           }}
           validationSchema={Yup.object().shape({
             userName: Yup.string()

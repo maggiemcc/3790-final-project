@@ -11,7 +11,7 @@ const QuotesContainer = () => {
 
 
   return (
-    <Box sx={{ padding: "2%", color: "white" }}>
+    <Box sx={{ p: "2%", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Quotes</Typography>
 
       {!identity.provisionalUser && !identity.user && (
@@ -34,7 +34,7 @@ const QuotesContainer = () => {
                   <QuotesCard
                     key={quote.quote_id}
                     quote={{ ...quote }}
-                    sx={{ margin: "auto" }}
+                    sx={{ m: "auto" }}
                   />
               );
             })}

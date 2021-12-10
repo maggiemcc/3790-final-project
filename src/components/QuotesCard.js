@@ -29,8 +29,8 @@ const QuotesCard = (props) => {
     <Box
       sx={{
         m: 2,
-        padding: "30px 3%",
-        backgroundColor: "black",
+        p: "30px 3%",
+        bgcolor: "black",
         color: "white",
         border: "2px solid white",
         borderRadius: "5px",
@@ -39,21 +39,21 @@ const QuotesCard = (props) => {
         maxWidth: "450px",
         height: "auto",
         "&:hover": {
-          backgroundColor: "darkGreen",
+          bgcolor: "darkGreen",
           border: "2px solid darkGreen"
         }
       }}
     >
       <Box sx={{
         display: "block",
-        margin: "auto",
+        m: "auto",
         justifyContent: "center",
         height: "100%",
       }}>
         <Typography variant="body1" sx={{
           height: "auto",
           minHeight: "60px",
-          paddingBottom: "10px",
+          pb: "10px",
           lineHeight: "normal",
           fontWeight: "bold"
         }}>
@@ -63,9 +63,13 @@ const QuotesCard = (props) => {
         <Box sx={{
           height: "auto",
         }}>
-          <CardActions sx={{ textAlign: "left", display: "inline", }}>
+          <CardActions sx={{ textAlign: "left", display: "inline" }}>
             <IconButton
-              sx={{ padding: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 20s ease infinite` : "#fff" }}
+              sx={{ 
+                p: 0, 
+                color: favorite ? "#F00" : "#fff", 
+                animation: favorite ? `${heartColor} 20s ease infinite` : "#fff"
+              }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
@@ -73,8 +77,11 @@ const QuotesCard = (props) => {
           </CardActions>
 
           <Typography variant="body1" sx={{
-            fontSize: "18px", textAlign: "right", display: "inline", margin: 0,
-            padding: 0
+            fontSize: "18px", 
+            textAlign: "right", 
+            display: "inline", 
+            m: 0,
+            p: 0
           }}>
             - {quote.author}
           </Typography>

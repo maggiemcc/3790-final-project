@@ -22,8 +22,6 @@ const CharacterCard = (props) => {
     borderWidth: 5,
     border: `2px solid white`,
     borderRadius: "5px",
-    padding: 0,
-    margin: 0,
   };
 
   const history = useHistory();
@@ -55,26 +53,27 @@ const CharacterCard = (props) => {
         display: "flex",
         flexDirection: "column",
         m: 2,
-        backgroundColor: "black",
+        bgcolor: "black",
         border: "2px solid white",
+        // opacity: ".65",
         "&:hover": {
-          borderRadius: "0px 0px 20px 20px",
-          padding: 0,
-          border: "3px solid white",
+          // opacity: 1,
+          borderRadius: "0px 0px 30px 30px",
+          p: 0,
         },
       }}
     >
       <Box
         sx={{
-          padding: 0,
-          margin: 0,
+          p: 0,
+          m: 0,
           height: "100%",
           width: "100%"
         }}
       >
 
         <Typography
-          sx={{ fontWeight: "bold", marginBottom: "20px", padding: "5px 0", width: "100%", borderBottom: "2px solid white", }}
+          sx={{ fontWeight: "bold", mb: "20px", p: "5px 0", width: "100%", borderBottom: "2px solid white", }}
           color="primary.contrastText"
           typography="h6"
           backgroundColor={statusColor}
@@ -89,20 +88,20 @@ const CharacterCard = (props) => {
         <Box
           sx={{
             display: "flex",
-            margin: "0 auto",
-            padding: 0,
+            m: "0 auto",
+            p: 0,
             height: 40,
             lineHeight: 40,
             justifyContent: "center",
             textAlign: "center",
-            paddingBottom: "15px",
+            pb: "15px",
           }}
         >
           <CardActions>
             <IconButton
-              sx={{ 
-                padding: "2px", 
-                color: favorite ? "#F00" : "#fff", 
+              sx={{
+                p: "2px",
+                color: favorite ? "#F00" : "#fff",
                 animation: favorite ? `${heartColor} 20s ease infinite` : "#fff",
                 background: `linear-gradient(to right, transparent 50%, ${statusColor} 50%) left`,
                 backgroundSize: "200%",
@@ -110,15 +109,15 @@ const CharacterCard = (props) => {
                 "&:hover": {
                   backgroundPosition: "right",
                 }
-               }}
+              }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
             </IconButton>
             <IconButton
               sx={{
-                padding: "1px",
-                margin: 0,
+                p: "1px",
+                m: 0,
                 color: "white",
                 background: `linear-gradient(to left, transparent 50%, ${statusColor} 50%) right`,
                 backgroundSize: "200%",

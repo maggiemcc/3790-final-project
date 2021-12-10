@@ -9,7 +9,7 @@ const DeathsContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <Box sx={{ padding: "2%", color: "white" }}>
+    <Box sx={{ p: "2%", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Character Deaths</Typography>
 
       {!identity.provisionalUser && !identity.user && (
@@ -32,7 +32,7 @@ const DeathsContainer = () => {
               <DeathsCard
                 key={death.death_id}
                 death={{ ...death }}
-                sx={{ margin: "auto" }}
+                sx={{ m: "auto" }}
               />
             );
           })}

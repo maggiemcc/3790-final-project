@@ -10,8 +10,8 @@ const style2 = {
   display: "inline",
 }
 const listItemStyle = {
-  margin: 0,
-  padding: "3px 0",
+  m: 0,
+  p: "3px 0",
 }
 
 const DeathsCard = (props) => {

@@ -40,6 +40,6 @@
 
 9. [Provide at least 3 different routes with navigation between them using React Router.](https://github.com/maggiemcc/3790-final-project/blob/master/src/App.js)
 
-10. [Manage your application's general and signup/login Authentication state using Hooks and the Context API.](https://github.com/maggiemcc/3790-final-project/tree/master/src/components/login)
+10. [Manage your application's general and signup/login Authentication state using Hooks and the Context API.](https://github.com/maggiemcc/3790-final-project/blob/master/src/pages/Welcome.js)
 
 11. Structure, document, and deploy your final project code according to common industry practices.

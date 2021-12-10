@@ -59,13 +59,13 @@ const Welcome = () => {
                   sx={{
                     color: "white",
                     textDecoration: "none",
-                    margin: "auto",
-                    padding: 0,
+                    m: "auto",
+                    p: 0,
                     textAlign: "center",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     border: "1px solid white",
-                    marginBottom: "25px",
+                    mb: "25px",
                     borderRadius: "10px",
                     contain: "content",
                     width: "100",
@@ -73,14 +73,14 @@ const Welcome = () => {
                     transitionDuration: "1s",
                     "&:hover": {
                       border: "none",
-                      backgroundColor: "#d8a025",
+                      bgcolor: "#d8a025",
                       color: "white",
                       textStroke: "3px black",
                       transitionDuration: "1s",
                     },
                   }}
                 >
-                  <Typography variant="h6" sx={{ margin: "auto" }}>
+                  <Typography variant="h6" sx={{ m: "auto" }}>
                     View Breaking Bad Episode List
                   </Typography>
 
@@ -102,13 +102,13 @@ const Welcome = () => {
                   sx={{
                     color: "white",
                     textDecoration: "none",
-                    margin: "auto",
-                    padding: 0,
+                    m: "auto",
+                    p: 0,
                     textAlign: "center",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     border: "1px solid white",
-                    marginBottom: "25px",
+                    mb: "25px",
                     borderRadius: "10px",
                     contain: "content",
                     width: "100",
@@ -117,7 +117,7 @@ const Welcome = () => {
 
                     "&:hover": {
                       border: "none",
-                      backgroundColor: "#5258a9",
+                      bgcolor: "#5258a9",
                       color: "white",
                       transitionDuration: "1s",
                     },
@@ -144,13 +144,13 @@ const Welcome = () => {
                   sx={{
                     color: "white",
                     textDecoration: "none",
-                    margin: "auto",
-                    padding: 0,
+                    m: "auto",
+                    p: 0,
                     textAlign: "center",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     border: "1px solid white",
-                    marginBottom: "25px",
+                    mb: "25px",
                     borderRadius: "10px",
                     contain: "content",
                     width: "100",
@@ -159,7 +159,7 @@ const Welcome = () => {
 
                     "&:hover": {
                       border: "none",
-                      backgroundColor: "#6e9036",
+                      bgcolor: "#6e9036",
                       color: "white",
                       transitionDuration: "1s",
                     },
@@ -187,13 +187,13 @@ const Welcome = () => {
                   sx={{
                     color: "white",
                     textDecoration: "none",
-                    margin: "auto",
-                    padding: 0,
+                    m: "auto",
+                    p: 0,
                     textAlign: "center",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     border: "1px solid white",
-                    marginBottom: "0px",
+                    mb: "0px",
                     borderRadius: "10px",
                     contain: "content",
                     width: "100",
@@ -201,7 +201,7 @@ const Welcome = () => {
                     transitionDuration: "1s",
                     "&:hover": {
                       border: "none",
-                      backgroundColor: "#59917f",
+                      bgcolor: "#59917f",
                       color: "white",
                       transitionDuration: "1s",
                     },
@@ -214,7 +214,7 @@ const Welcome = () => {
                   />
                   <Typography
                     variant="h6"
-                    sx={{ margin: "auto", paddingLeft: "5px" }}
+                    sx={{ m: "auto", pl: "5px" }}
                   >
                     View Breaking Bad Character Deaths
                   </Typography>

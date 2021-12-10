@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 
 const loginStyle = {
-  margin: "5% auto",
+  m: "5% auto",
   width: "80%",
   maxWidth: "500px",
   bgcolor: "background.paper",
@@ -100,8 +100,11 @@ const LoginForm = () => {
               />
 
               <Button
-                style={{
-                  backgroundColor: "green",
+                sx={{
+                  bgcolor: "green",
+                  "&:hover": {
+                    bgcolor: "darkGreen"
+                  }
                 }}
                 fullWidth
                 size="large"

@@ -11,7 +11,7 @@ const EpisodesContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <Box sx={{ padding: "2%", color: "white" }}>
+    <Box sx={{ p: "2%", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Episodes</Typography>
 
       {!identity.provisionalUser && !identity.user && (
@@ -21,10 +21,10 @@ const EpisodesContainer = () => {
 
       {identity.user && (
         <Fade in timeout={1200}>
-        <TableContainer sx={{ border: "2px solid white", minHeight: "100px", minWidth: "100px", maxWidth: "920px", margin: "auto", marginTop: "50px", borderRadius: "5px"}}>
+        <TableContainer sx={{ border: "2px solid white", minHeight: "100px", minWidth: "100px", maxWidth: "920px", m: "auto", mt: "50px", borderRadius: "5px"}}>
           <Table>
             <TableHead>
-              <TableRow sx={{margin: "auto", backgroundColor: "white", lineHeight: "normal"}}>
+              <TableRow sx={{m: "auto", bgcolor: "white", lineHeight: "normal"}}>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Name</TableCell>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Episode</TableCell>
                 <TableCell sx={{flexGrow: 1, fontWeight: "bold", width: "auto", maxWidth: "100px", lineHeight: "normal"}}>Air Date</TableCell>

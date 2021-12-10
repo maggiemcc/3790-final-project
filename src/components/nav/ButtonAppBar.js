@@ -12,7 +12,6 @@ import {
   ListItemIcon,
   ListItemText,
   Avatar,
-  // Grow,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GroupIcon from '@mui/icons-material/Group';
@@ -41,10 +40,9 @@ const ButtonAppBar = () => {
   `;
 
   const buttonWobble = keyframes`
-  30%, 70% {transform: rotate(0deg);}
-  40% {transform: rotate(3deg);}
-  50% {transform: rotate(-3deg);}
-  60% {transform: rotate(3deg);}
+  41%, 45% {transform: rotate(0deg);}
+  42%, 44% {transform: rotate(3deg);}
+  43% {transform: rotate(-3deg);}
   `;
 
   const colorChange = keyframes`
@@ -52,7 +50,6 @@ const ButtonAppBar = () => {
   20%, 80% {background-color: #008000;}
   50% {background-color: #6B8E23;}
   `;
-
 
   const menuWobble = keyframes`
   0%, 100% {transform: rotate(0deg);}
@@ -83,7 +80,7 @@ const ButtonAppBar = () => {
     <Box
       sx={{
         width: 260,
-        backgroundColor: "green",
+        bgcolor: "green",
         color: "white",
         height: "100%",
       }}
@@ -142,9 +139,9 @@ const ButtonAppBar = () => {
         <AppBar
           position="static"
           sx={{
-            backgroundColor: "white",
+            bgcolor: "white",
             color: "black",
-            margin: "auto",
+            m: "auto",
             textAlign: "left",
           }}
         >
@@ -220,7 +217,7 @@ const ButtonAppBar = () => {
             {identity.user && (
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 <Avatar variant="rounded" sx={{
-                  backgroundColor: "black", color: "white", margin: "auto", marginRight: "5px", width: 27, height: 27,
+                  backgroundColor: "black", color: "white", m: "auto", mr: "5px", width: 27, height: 27,
                   animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18, fontWeight: "500"
                 }}>
                   {identity.user?.user_metadata?.full_name.slice(0, 1)}

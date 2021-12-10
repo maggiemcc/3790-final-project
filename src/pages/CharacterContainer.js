@@ -33,7 +33,7 @@ const CharacterContainer = () => {
   const identity = useIdentityContext();
 
   return (
-    <Box id="containerLayout" sx={{ padding: "2% 0", color: "white" }}>
+    <Box id="containerLayout" sx={{ p: "2% 0", color: "white" }}>
       <Typography variant="h3" fontWeight="bold">Characters</Typography>
 
       {!identity.provisionalUser && !identity.user && (
@@ -43,23 +43,23 @@ const CharacterContainer = () => {
       {identity.user && (
         <Fade in timeout={1200}>
 
-          <Box sx={{ margin: 0, padding: 0 }}>
+          <Box sx={{ m: 0, p: 0 }}>
 
             <Box
               sx={{
-                margin: 0,
-                marginTop: "2%",
+                m: 0,
+                mt: "2%",
                 color: "black",
-                backgroundColor: "white",
+                bgcolor: "white",
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "center",
-                padding: "2% 0"
+                p: "2% 0"
               }}
             >
               <Typography variant="h6" fontWeight="bold" lineHeight="normal">Character Status:</Typography>
-              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkGreen", padding: "0 2%" }}>Alive</Typography>
-              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", padding: "0 2%" }}>Dead/Presumed Dead</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkGreen", p: "0 2%" }}>Alive</Typography>
+              <Typography variant="h6" fontWeight="bold" lineHeight="normal" sx={{ color: "darkRed", p: "0 2%" }}>Dead/Presumed Dead</Typography>
             </Box>
 
             <Box
@@ -71,7 +71,7 @@ const CharacterContainer = () => {
                     key={character.char_id}
                     modalFunction={handleOpen}
                     character={{ ...character }}
-                    sx={{ margin: "auto" }}
+                    sx={{ m: "auto" }}
                   />
                 );
               })}

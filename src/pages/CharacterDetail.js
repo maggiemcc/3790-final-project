@@ -1,21 +1,14 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
-import {
-  Box,
-  Typography,
-  List,
-  ListItem,
-  Grid,
-  Fade
-} from "@mui/material";
+import { Box, Typography, List, ListItem, Grid, Fade } from "@mui/material";
 import { useIdentityContext } from "react-netlify-identity-gotrue";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 
 let imageStyle = {
-  padding: 0,
-  margin: "auto",
+  p: 0,
+  m: "auto",
   border: "2px solid white",
   borderRadius: "5px",
   textAlign: "right",
@@ -35,13 +28,13 @@ const CharacterDetail = () => {
   });
 
   return (
-    <Box sx={{ padding: "2%", color: "white" }}>
+    <Box sx={{ p: "2%", color: "white" }}>
       {!identity.provisionalUser && !identity.user && (
         <Typography variant="h5">Please signup or login first.</Typography>
       )}
 
       {identity.user && (
-        <Box sx={{ color: "white", padding: "3%", margin: "auto" }}>
+        <Box sx={{ color: "white", p: "3%", m: "auto" }}>
           <Typography variant="h3" fontWeight="bold">
             {character.name}
           </Typography>
@@ -54,10 +47,10 @@ const CharacterDetail = () => {
                 display: "flex",
                 flexWrap: "wrap",
                 maxWidth: "750px",
-                margin: "2% auto",
+                m: "2% auto",
               }}
             >
-              <Box sx={{ textAlign: "left", margin: "auto" }}>
+              <Box sx={{ textAlign: "left", m: "auto" }}>
                 <img
                   style={imageStyle}
                   src={character.img}
@@ -67,11 +60,11 @@ const CharacterDetail = () => {
 
               <Box
                 sx={{
-                  margin: "20px auto",
-                  backgroundColor: "white",
+                  m: "20px auto",
+                  bgcolor: "white",
                   color: "black",
                   borderRadius: "10px",
-                  padding: "0 2%",
+                  p: "0 2%",
                   width: "100%",
                   maxWidth: "350px",
                   height: "auto",
@@ -80,9 +73,9 @@ const CharacterDetail = () => {
               >
                 <List>
                   <ListItem>
-                    <Typography variant="h6" sx={{textAlign: "center", margin: "0 auto"}}>Information:</Typography>
+                    <Typography variant="h6" sx={{ textAlign: "center", m: "0 auto" }}>Information:</Typography>
                   </ListItem>
-                 <hr style={{height: "2px", backgroundColor: "black", border: "none", margin: "0"}} />
+                  <hr style={{ height: "2px", backgroundColor: "black", border: "none", margin: 0 }} />
                   <ListItem>
                     <ArrowForwardIosIcon sx={{ fontSize: 16, }} />
                     <Typography variant="body1" sx={{ fontSize: "16px" }}>
@@ -123,7 +116,7 @@ const CharacterDetail = () => {
                         {character.occupation.map((occupation, index) => {
                           return (
                             <Box sx={{ display: "block" }} key={occupation}>
-                              <ArrowForwardIosIcon sx={{ fontSize: 13, display: "inline", marginLeft: "15px" }} />
+                              <ArrowForwardIosIcon sx={{ fontSize: 13, display: "inline", ml: "15px" }} />
                               <Typography variant="body1" sx={{ fontSize: "16px", display: "inline" }}>
                                 {(index ? " " : " ") + occupation}
                               </Typography>
