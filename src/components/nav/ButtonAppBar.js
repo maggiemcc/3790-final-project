@@ -90,55 +90,48 @@ const ButtonAppBar = () => {
       role="presentation"
     >
       <List>
-        {/* <Grow in timeout={900}> */}
           <ListItem button onClick={() => handleNavChoice('', false)} sx={navAnimation}>
             <ListItemIcon>
               <HomeIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Welcome" />
           </ListItem>
-        {/* </Grow> */}
-        {/* <Grow in timeout={1100}> */}
+
           <ListItem button onClick={() => handleNavChoice('episodes', true)} sx={navAnimation}>
             <ListItemIcon>
               <LocalMoviesIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Episodes" />
           </ListItem>
-        {/* </Grow> */}
-        {/* <Grow in timeout={1400}> */}
+
           <ListItem button onClick={() => handleNavChoice('quotes', true)} sx={navAnimation}>
             <ListItemIcon>
               <FormatQuoteIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Quotes" />
           </ListItem>
-        {/* </Grow> */}
-        {/* <Grow in timeout={1700}> */}
+
           <ListItem button onClick={() => handleNavChoice('characters', true)} sx={navAnimation}>
             <ListItemIcon>
               <GroupIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Characters" />
           </ListItem>
-        {/* </Grow> */}
-        {/* <Grow in timeout={2000}> */}
+
           <ListItem button onClick={() => handleNavChoice('deaths', true)} sx={navAnimation}>
             <ListItemIcon>
               <LocalHospitalIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Character Deaths" />
           </ListItem>
-        {/* </Grow> */}
 
-        {/* <Grow in timeout={2300}> */}
           <ListItem button onClick={() => handleNavChoice('favorites', false)} sx={navAnimation}>
             <ListItemIcon>
               <FavoriteIcon sx={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary={"My Favorites (" + (favoriteCharacters?.length + favoriteQuotes?.length) + ")"} />
           </ListItem>
-        {/* </Grow> */}
+
       </List>
     </Box>
   );

@@ -29,8 +29,7 @@ const App = () => {
 
 
   const bull = (
-    <Box
-      component="span"
+    <Box component="span"
       sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
     >
       •
@@ -53,54 +52,54 @@ const App = () => {
               <ButtonAppBar />
               <ScrollToTop >
 
-              <Suspense
-                fallback={
-                  <Box sx={style}>
-                    <CircularProgress />
-                  </Box>
-                }
-              >
-                <Switch>
-                  <Route path="/" exact>
-                    <Welcome />
-                  </Route>
+                <Suspense
+                  fallback={
+                    <Box sx={style}>
+                      <CircularProgress />
+                    </Box>
+                  }
+                >
+                  <Switch>
+                    <Route path="/" exact>
+                      <Welcome />
+                    </Route>
 
-                  <Route path="/characters" exact>
-                    <CharacterContainer sx={{ m: "auto", width: "auto" }} />
-                  </Route>
+                    <Route path="/characters" exact>
+                      <CharacterContainer sx={{ m: "auto", width: "auto" }} />
+                    </Route>
 
-                  <Route path="/characters/:characterId" exact>
-                    <CharacterDetail />
-                  </Route>
+                    <Route path="/characters/:characterId" exact>
+                      <CharacterDetail />
+                    </Route>
 
-                  <Route path="/quotes">
-                    <QuotesContainer />
-                  </Route>
+                    <Route path="/quotes">
+                      <QuotesContainer />
+                    </Route>
 
-                  <Route path="/episodes">
-                    <EpisodesContainer />
-                  </Route>
+                    <Route path="/episodes">
+                      <EpisodesContainer />
+                    </Route>
 
-                  <Route path="/deaths">
-                    <DeathsContainer />
-                  </Route>
+                    <Route path="/deaths">
+                      <DeathsContainer />
+                    </Route>
 
-                  <Route path="/login">
-                    <LoginForm />
-                  </Route>
+                    <Route path="/login">
+                      <LoginForm />
+                    </Route>
 
-                  <Route path="/signup">
-                    <SignupForm />
-                  </Route>
-                  <Route path="/favorites">
-                    <Favorites />
-                  </Route>
+                    <Route path="/signup">
+                      <SignupForm />
+                    </Route>
+                    <Route path="/favorites">
+                      <Favorites />
+                    </Route>
 
-                  <Route path="*">
-                    <NotFound />
-                  </Route>
-                </Switch>
-              </Suspense>
+                    <Route path="*">
+                      <NotFound />
+                    </Route>
+                  </Switch>
+                </Suspense>
               </ScrollToTop>
 
             </BreakingBadContextProvider>

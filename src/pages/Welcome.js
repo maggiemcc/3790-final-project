@@ -5,7 +5,7 @@ import { useIdentityContext } from "react-netlify-identity-gotrue";
 
 const Welcome = () => {
   const identity = useIdentityContext();
-  const removeDefaultStyle ={
+  const removeDefaultStyle = {
     maxWidth: 800,
     textDecoration: "none",
   }

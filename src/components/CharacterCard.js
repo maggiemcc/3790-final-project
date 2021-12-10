@@ -57,12 +57,10 @@ const CharacterCard = (props) => {
         m: 2,
         backgroundColor: "black",
         border: "2px solid white",
-        contain: "content",
         "&:hover": {
-          // borderRadius: 4,
           borderRadius: "0px 0px 20px 20px",
           padding: 0,
-          // bgcolor: "rgb(34, 34, 34)",
+          border: "3px solid white",
         },
       }}
     >
