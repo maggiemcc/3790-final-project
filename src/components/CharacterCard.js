@@ -100,7 +100,17 @@ const CharacterCard = (props) => {
         >
           <CardActions>
             <IconButton
-              sx={{ padding: "2px", color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 20s ease infinite` : "#fff" }}
+              sx={{ 
+                padding: "2px", 
+                color: favorite ? "#F00" : "#fff", 
+                animation: favorite ? `${heartColor} 20s ease infinite` : "#fff",
+                background: `linear-gradient(to right, transparent 50%, ${statusColor} 50%) left`,
+                backgroundSize: "200%",
+                transition: ".5s ease-out",
+                "&:hover": {
+                  backgroundPosition: "right",
+                }
+               }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
