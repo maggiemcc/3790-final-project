@@ -15,8 +15,7 @@ const QuotesCard = (props) => {
 
   const heartColor = keyframes`
   0%, 100% {color: red;}
-  25%, 75% {color: pink;}
-  50% {color: #DA70D6;}
+  50% {color: pink;}
   `;
 
   React.useEffect(() => {
@@ -66,7 +65,7 @@ const QuotesCard = (props) => {
         }}>
           <CardActions sx={{ textAlign: "left", display: "inline", }}>
             <IconButton
-              sx={{ padding: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
+              sx={{ padding: 0, color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 20s ease infinite` : "#fff" }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />

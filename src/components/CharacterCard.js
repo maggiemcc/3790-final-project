@@ -38,26 +38,15 @@ const CharacterCard = (props) => {
 
   const heartColor = keyframes`
   0%, 100% {color: red;}
-  25%, 75% {color: pink;}
-  50% {color: #DA70D6;}
+  50% {color: pink;}
   `;
+
 
   React.useEffect(() => {
     favoriteCharacters.includes(character.name) ? setFavoriteCharacters(true) : setFavoriteCharacters(false);
   },
     [character.name, favoriteCharacters]
   );
-
-
-  // const menuWobble = keyframes`
-  // 0%, 100% {
-  //   opacity: 1;
-  //   color: red;
-  // }
-  // 50% {
-  //   opacity: 0;
-  // }
-  // `;
 
   return (
     <Box
@@ -113,7 +102,7 @@ const CharacterCard = (props) => {
         >
           <CardActions>
             <IconButton
-              sx={{ padding: "2px", color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 80s ease infinite` : "#fff" }}
+              sx={{ padding: "2px", color: favorite ? "#F00" : "#fff", animation: favorite ? `${heartColor} 20s ease infinite` : "#fff" }}
               onClick={handleFavoriteClick}
             >
               <FavoriteIcon />
