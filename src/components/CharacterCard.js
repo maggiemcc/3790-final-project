@@ -106,8 +106,11 @@ const CharacterCard = (props) => {
                 background: `linear-gradient(to right, transparent 50%, ${statusColor} 50%) left`,
                 backgroundSize: "200%",
                 transition: ".5s ease-out",
+
                 "&:hover": {
                   backgroundPosition: "right",
+                border: "1px solid white",
+
                 }
               }}
               onClick={handleFavoriteClick}
@@ -116,7 +119,7 @@ const CharacterCard = (props) => {
             </IconButton>
             <IconButton
               sx={{
-                p: "1px",
+                p: "2px",
                 m: 0,
                 color: "white",
                 background: `linear-gradient(to left, transparent 50%, ${statusColor} 50%) right`,
@@ -124,6 +127,8 @@ const CharacterCard = (props) => {
                 transition: ".5s ease-out",
                 "&:hover": {
                   backgroundPosition: "left",
+                border: "1px solid white",
+
                 }
               }}
               onClick={handleInfoClick}
