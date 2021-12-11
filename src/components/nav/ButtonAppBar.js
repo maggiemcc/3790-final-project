@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   ListItemText,
   Avatar,
+  Modal,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GroupIcon from '@mui/icons-material/Group';
@@ -27,6 +28,24 @@ import { useBreakingBadContext } from "../../contexts/BreakingBadContext";
 
 const ButtonAppBar = () => {
   const { favoriteCharacters, favoriteQuotes } = useBreakingBadContext();
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "80%",
+    maxWidth: 500,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    borderRadius: "6px",
+    boxShadow: 24,
+    fontWeight: "normal",
+    p: 4,
+  };
 
   const removeDefaultStyle = {
     textDecoration: "none",
@@ -64,7 +83,6 @@ const ButtonAppBar = () => {
 
   const identity = useIdentityContext();
 
-
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -87,47 +105,47 @@ const ButtonAppBar = () => {
       role="presentation"
     >
       <List>
-          <ListItem button onClick={() => handleNavChoice('', false)} sx={navAnimation}>
-            <ListItemIcon>
-              <HomeIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Welcome" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('', false)} sx={navAnimation}>
+          <ListItemIcon>
+            <HomeIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Welcome" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('episodes', true)} sx={navAnimation}>
-            <ListItemIcon>
-              <LocalMoviesIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Episodes" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('episodes', true)} sx={navAnimation}>
+          <ListItemIcon>
+            <LocalMoviesIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Episodes" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('quotes', true)} sx={navAnimation}>
-            <ListItemIcon>
-              <FormatQuoteIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Quotes" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('quotes', true)} sx={navAnimation}>
+          <ListItemIcon>
+            <FormatQuoteIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Quotes" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('characters', true)} sx={navAnimation}>
-            <ListItemIcon>
-              <GroupIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Characters" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('characters', true)} sx={navAnimation}>
+          <ListItemIcon>
+            <GroupIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Characters" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('deaths', true)} sx={navAnimation}>
-            <ListItemIcon>
-              <LocalHospitalIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary="Character Deaths" />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('deaths', true)} sx={navAnimation}>
+          <ListItemIcon>
+            <LocalHospitalIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary="Character Deaths" />
+        </ListItem>
 
-          <ListItem button onClick={() => handleNavChoice('favorites', false)} sx={navAnimation}>
-            <ListItemIcon>
-              <FavoriteIcon sx={{ color: "white" }} />
-            </ListItemIcon>
-            <ListItemText primary={"My Favorites (" + (favoriteCharacters?.length + favoriteQuotes?.length) + ")"} />
-          </ListItem>
+        <ListItem button onClick={() => handleNavChoice('favorites', false)} sx={navAnimation}>
+          <ListItemIcon>
+            <FavoriteIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText primary={"My Favorites (" + (favoriteCharacters?.length + favoriteQuotes?.length) + ")"} />
+        </ListItem>
 
       </List>
     </Box>
@@ -139,9 +157,9 @@ const ButtonAppBar = () => {
         <AppBar
           position="static"
           sx={{
-            bgcolor: "white",
+            backgroundColor: "white",
             color: "black",
-            m: "auto",
+            margin: "auto",
             textAlign: "left",
           }}
         >
@@ -152,10 +170,10 @@ const ButtonAppBar = () => {
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
-              sx={{ 
+              sx={{
                 "&:hover": {
                   animation: `${menuWobble} 5s ease-in-out infinite`,
-                } 
+                }
               }}
             >
               <MenuIcon />
@@ -216,12 +234,15 @@ const ButtonAppBar = () => {
 
             {identity.user && (
               <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-                <Avatar variant="rounded" sx={{
-                  backgroundColor: "black", color: "white", m: "auto", mr: "5px", width: 27, height: 27,
-                  animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18, fontWeight: "500"
-                }}>
-                  {identity.user?.user_metadata?.full_name.slice(0, 1)}
-                </Avatar>
+                <Button sx={{ textAlign: "center", margin: 0, }} onClick={handleOpen}>
+                  <Avatar variant="rounded" sx={{
+                    backgroundColor: "black", color: "white", margin: "auto", width: "100%", height: "100%",
+                    animation: `${colorChange} 15s ease-in-out infinite`, fontSize: 18, fontWeight: "500"
+                  }}>
+                    {identity.user?.user_metadata?.full_name.slice(0, 1)}
+                  </Avatar>
+                </Button>
+
                 <Button color="inherit" onClick={identity.logout}>
                   <NavLink
                     to="/"
@@ -230,6 +251,33 @@ const ButtonAppBar = () => {
                     Logout
                   </NavLink>
                 </Button>
+
+
+                <Modal
+                  open={modalOpen}
+                  onClose={handleClose}
+                >
+                  <Box sx={style}>
+                    <Typography variant="h4" textAlign="center" fontWeight="bold">Breaking Bad User</Typography>
+                    <hr style={{backgroundColor: "darkGreen", height: "4px", border: "none", borderRadius: "3px"}}/>
+                    <Typography variant="body1" sx={{ mt: 2 }}>
+                      <b>User Name:</b> {identity.user?.user_metadata?.full_name}
+                    </Typography>
+                    
+                    <Typography variant="body1" sx={{ mt: 1 }}>
+                      <b>Email:</b> {identity.user?.email}
+                    </Typography>
+
+                    {/* <Typography variant="body1" sx={{ mt: 1 }}>
+                      <b>id:</b> {identity.user?.id}
+                    </Typography> */}
+
+                    <Typography variant="body1" sx={{ mt: 1 }}>
+                      <b>Created Account On:</b> {identity.user?.created_at.slice(0, 10)}
+                    </Typography>
+
+                  </Box>
+                </Modal>
               </Box>
             )}
 
