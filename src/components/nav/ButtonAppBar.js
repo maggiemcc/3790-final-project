@@ -34,6 +34,7 @@ const ButtonAppBar = () => {
 
   const style = {
     position: 'absolute',
+    outline: "none",
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -259,7 +260,7 @@ const ButtonAppBar = () => {
                 >
                   <Box sx={style}>
                     <Typography variant="h4" textAlign="center" fontWeight="bold">Breaking Bad User</Typography>
-                    <hr style={{backgroundColor: "darkGreen", height: "4px", border: "none", borderRadius: "3px"}}/>
+                    <hr style={{backgroundColor: "black", height: "4px", border: "none", borderRadius: "3px"}}/>
                     <Typography variant="body1" sx={{ mt: 2 }}>
                       <b>User Name:</b> {identity.user?.user_metadata?.full_name}
                     </Typography>

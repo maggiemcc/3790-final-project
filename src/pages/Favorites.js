@@ -27,7 +27,7 @@ const Favorites = () => {
     };
 
     return (
-        <Box style={style}>
+        <Box sx={style}>
             <Typography variant="h3" fontWeight="bold">Favorites</Typography>
 
             {!identity.provisionalUser && !identity.user && (
