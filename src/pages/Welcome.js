@@ -48,9 +48,9 @@ const Welcome = () => {
       {identity.user && (
         <Fade in timeout={3500}>
           <Box>
-            <h1>Welcome {identity.user?.user_metadata?.full_name}!</h1>
+            <Typography variant="h3" sx={{pt: "10px", color:"white", fontWeight:"900",}}>Welcome {identity.user?.user_metadata?.full_name}!</Typography>
 
-            <div style={{ padding: "5%" }}>
+            <Box sx={{ p: "5%" }}>
               <Link
                 to="/episodes"
                 style={removeDefaultStyle}
@@ -220,7 +220,7 @@ const Welcome = () => {
                   </Typography>
                 </Box>
               </Link>
-            </div>
+            </Box>
           </Box>
         </Fade>
       )}
